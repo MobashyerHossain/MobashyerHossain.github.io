@@ -116,9 +116,12 @@ h2 { position: relative; font-size: clamp(2rem, 4.6vw, 3.6rem); max-width: 18ch;
 .tangle, .cue { display: none; }
 .js .tangle { display: block; width: 100%; height: 104px; overflow: visible; cursor: pointer; transition: height 0.55s ease; }
 .js .case.open .tangle { height: 26px; }
-.tangle circle { fill: var(--thread); }
-.js .cue { display: inline-block; margin: 0; font-family: var(--display); font-size: 0.9rem; color: var(--muted); cursor: pointer; }
-.js .cue:hover { color: var(--thread); }
+.tangle .dot { fill: var(--thread); }
+.tangle .pulse { fill: none; stroke: var(--thread); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: pull 1.8s ease-out infinite; }
+.case.open .pulse { animation: none; opacity: 0; }
+@keyframes pull { from { transform: scale(1); opacity: 0.9; } to { transform: scale(3.4); opacity: 0; } }
+.js .cue { display: block; margin: 0; text-align: right; font-family: var(--display); font-size: 0.9rem; color: var(--thread); cursor: pointer; }
+.js .cue:hover { color: var(--ink); }
 .js .panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.55s ease; }
 .js .case.open .panel { grid-template-rows: 1fr; }
 .js .inner { overflow: hidden; min-height: 0; visibility: hidden; transition: visibility 0s 0.55s; }
@@ -173,6 +176,7 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
   html { scroll-behavior: auto; }
   .hint { display: none; }
   .js .tangle, .js .panel { transition: none; }
+  .tangle .pulse { animation: none; }
 }
 </style>
 </head>
@@ -261,8 +265,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">EchoNex, middleware for payment speakers</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-1"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>When a customer paid by QR code, the merchant and the customer both had to check a phone to know the money had arrived.</dd>
@@ -283,8 +287,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">POS host simulator, built in Python</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-2"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>To test a transaction, the team either read device logs line by line or connected to a bank’s host, which was only possible when the bank was available.</dd>
@@ -303,8 +307,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">webOS payment app for the Topwise Q1</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-3"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>A bank needed a payment application on a terminal platform that was new to us. A build like that normally takes three to four months.</dd>
@@ -323,8 +327,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">ECR launcher, connecting cash registers to payment apps</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-4"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>Linking a merchant’s cash register to the payment app on a terminal relied on a manufacturer’s launcher that carries a licence cost.</dd>
@@ -343,8 +347,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">Payment speaker applications for the CS85</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-5"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>A payment speaker tells a merchant that money has arrived. Merchants also needed the same small device to accept the payment.</dd>
@@ -363,8 +367,8 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
         <p class="what">Bringing AI tools into the department</p>
       </div>
       <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle r="4"/></svg>
-        <p class="cue" aria-hidden="true">Open the file</p>
+        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
+        <p class="cue" aria-hidden="true">Click to untangle</p>
         <div class="panel" id="file-6"><div class="inner"><dl>
           <dt>The problem</dt>
           <dd>AI tools were not part of how the company built software.</dd>
@@ -579,7 +583,7 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
   var seeds = [[7, 13, 6, 11, 0.3], [8, 15, 5, 12, 1.1], [6, 11, 7, 13, 2.0], [9, 14, 6, 10, 0.7], [7, 16, 8, 11, 1.6], [8, 12, 9, 14, 2.6]];
   var files = [];
   Array.prototype.forEach.call(document.querySelectorAll('.case'), function (el, i) {
-    var svg = el.querySelector('.tangle'), paths = svg.querySelectorAll('path'), dot = svg.querySelector('circle');
+    var svg = el.querySelector('.tangle'), paths = svg.querySelectorAll('path'), dot = svg.querySelector('.dot'), pulse = svg.querySelector('.pulse');
     var btn = el.querySelector('.toggle'), cue = el.querySelector('.cue');
     var sd = seeds[i % seeds.length], t = 0, raf = 0;
 
@@ -592,12 +596,12 @@ footer { position: relative; z-index: 2; padding: 0 clamp(20px, 5vw, 72px) 40px 
                 yc + e * 40 * (0.6 * Math.cos(TAU * sd[2] * u + sd[4] * 2) + 0.4 * Math.sin(TAU * sd[3] * u + 0.5))]);
       }
       setD(paths, toPath(P));
-      dot.setAttribute('cx', W - 8); dot.setAttribute('cy', yc); dot.style.opacity = k;
+      dot.setAttribute('cx', W - 8); dot.setAttribute('cy', yc); pulse.setAttribute('cx', W - 8); pulse.setAttribute('cy', yc);
     }
     function set(open, instant) {
       el.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      cue.textContent = open ? 'Close the file' : 'Open the file';
+      cue.textContent = open ? 'Click to close' : 'Click to untangle';
       cancelAnimationFrame(raf);
       var to = open ? 1 : 0;
       if (instant || still) { t = to; render(); return; }
