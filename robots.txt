@@ -1,0 +1,5 @@
+# Updated by Mobashyer D-17-11-26
+User-agent: *
+Allow: /
+
+Sitemap: https://mobashyerhossain.github.io/sitemap.xml
