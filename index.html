@@ -1223,6 +1223,644 @@ footer { position: relative; z-index: 2; padding: 0 var(--pad) 46px; max-width: 
 </html>
 
 </script>
+<script type="text/x-kmh-style" id="kmh-style-nakshi">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta name="theme-color" content="#F2ECDF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F2ECDF'/%3E%3Cpath d='M16 6c4 4 4 8 0 12-4-4-4-8 0-12zM6 16c4-4 8-4 12 0-4 4-8 4-12 0zM26 16c-4-4-8-4-12 0 4 4 8 4 12 0z' fill='none' stroke='%23B23A2E' stroke-width='1.8' stroke-dasharray='2.4 1.8'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%232B3A67'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500&family=Alegreya:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<\!-- Nakshi Kantha (Tuesday). Added by Mobashyer D-17-11-26.
+     The portfolio as a kantha: soft cotton, running stitches in madder, indigo, turmeric and black,
+     a lotus at the centre with paisleys in the corners, a river journey for the career,
+     and case files as stitched patches whose tangled thread pulls straight. -->
+<style>
+:root {
+  color-scheme: light;
+  --cloth: #F2ECDF;
+  --cloth-2: #E9E1D0;
+  --patch: #F8F4EA;
+  --ink: #221E1A;
+  --muted: #6A5F52;
+  --madder: #B23A2E;
+  --indigo: #2B3A67;
+  --turmeric: #C4861A;
+  --leaf: #4E6B3A;
+  --black: #221E1A;
+  --serif: "Alegreya", "Iowan Old Style", Georgia, serif;
+  --sans: "Alegreya Sans", "Gill Sans", "Segoe UI", sans-serif;
+  --sc: "Alegreya Sans SC", "Gill Sans", "Segoe UI", sans-serif;
+  --pad: clamp(18px, 5vw, 64px);
+  --stitch: 7px 6px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--sans); font-size: 1.12rem; line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  background-color: var(--cloth);
+  /* cotton weave: a fine crosshatch plus the soft unevenness of layered old saris */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.38  0 0 0 0 0.28  0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(0deg, rgba(120, 95, 60, 0.035) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120, 95, 60, 0.03) 0 1px, transparent 1px 3px),
+    radial-gradient(120% 60% at 15% 10%, rgba(255, 255, 255, 0.5), transparent 60%),
+    radial-gradient(90% 50% at 90% 70%, rgba(214, 196, 160, 0.25), transparent 70%);
+}
+/* Updated by Mobashyer D-17-11-26 the cotton grain is part of the background (a fixed blended overlay made scrolling stutter) */
+::selection { background: var(--indigo); color: var(--cloth); }
+a { color: inherit; text-decoration-color: var(--madder); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; text-decoration-style: dashed; }
+a:hover { color: var(--madder); }
+:focus-visible { outline: 2px dashed var(--madder); outline-offset: 4px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; line-height: 1.12; }
+p { margin: 0 0 1em; }
+.sc { font-family: var(--sc); font-weight: 500; letter-spacing: 0.08em; font-size: 0.92rem; color: var(--muted); }
+.wrap { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 var(--pad); }
+/* running stitch, reusable */
+.st { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.2; stroke-dasharray: 7 6; }
+
+/* bar */
+.bar { position: sticky; top: 0; z-index: 30; background: rgba(242, 236, 223, 0.9); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 13px; padding-bottom: 13px; }
+.bar::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--madder) 0 7px, transparent 7px 13px); opacity: 0.85; }
+.bar .name { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; text-decoration: none; }
+.bar nav { display: flex; gap: clamp(14px, 2.4vw, 28px); font-family: var(--sc); font-weight: 500; letter-spacing: 0.06em; }
+.bar nav a { text-decoration: none; color: var(--muted); }
+.bar nav a:hover { color: var(--madder); }
+
+/* the thread that sews itself down the page */
+#seam { position: absolute; left: 0; top: 0; width: 100%; pointer-events: none; z-index: 1; overflow: visible; }
+
+/* ---------- hero: the kantha panel ---------- */
+.hero { padding: clamp(36px, 6vw, 80px) 0 clamp(40px, 6vw, 80px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 70px); align-items: center; }
+.who { margin-bottom: 1.4rem; }
+.hero h1 { font-weight: 500; font-size: clamp(1.9rem, 4vw, 3.5rem); line-height: 1.12; }
+.hero h1 span { display: block; white-space: nowrap; }
+.hero h1 span:nth-child(2) { color: var(--indigo); font-style: italic; }
+.hero h1 span:nth-child(3) { color: var(--madder); }
+.hero .lede { max-width: 32rem; margin: 1.6rem 0 1.4rem; font-size: 1.22rem; }
+.note { color: var(--muted); font-style: italic; font-family: var(--serif); }
+.panel { position: relative; aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: center; }
+.panel svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.panel .portrait { position: absolute; left: 50%; top: 50%; width: 30%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 6px var(--cloth), 0 8px 24px rgba(60, 40, 15, 0.18); }
+.panel .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; filter: saturate(0.92) sepia(0.08); }
+
+/* ---------- sections ---------- */
+main { position: relative; z-index: 2; }
+section { padding: clamp(60px, 9vw, 110px) 0 0; }
+.shead { text-align: center; margin: 0 auto 2.6rem; max-width: 46rem; }
+.shead svg { width: 120px; height: 34px; display: block; margin: 0 auto 0.8rem; overflow: visible; }
+.shead h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 500; }
+.shead .intro { color: var(--muted); margin: 0.9rem auto 0; font-size: 1.08rem; }
+
+/* career: a river journey */
+.river { position: relative; }
+.river svg.water { display: block; width: 100%; height: 150px; overflow: visible; }
+.boat { position: absolute; top: 0; left: 0; width: 64px; height: 44px; transform: translate(-50%, -50%); transition: none; pointer-events: none; }
+.moorings { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 8px; }
+.mooring { position: relative; padding: 22px 20px 20px; background: var(--patch); border-radius: 6px; }
+.mooring::before { content: ""; position: absolute; inset: 6px; border: 2px dashed var(--c, var(--indigo)); border-radius: 4px; opacity: 0.75; pointer-events: none; }
+.mooring .when { font-family: var(--sc); letter-spacing: 0.08em; color: var(--c, var(--indigo)); font-weight: 700; }
+.mooring h3 { font-size: 1.38rem; margin: 0.25rem 0 0.4rem; }
+.mooring .role { font-style: italic; font-family: var(--serif); color: var(--muted); margin-bottom: 0.7rem; }
+.mooring p { font-size: 1rem; }
+.mooring .reach { font-size: 0.92rem; color: var(--muted); margin: 0; display: flex; gap: 10px; align-items: center; }
+.mooring .reach i { flex: none; height: 2px; background: repeating-linear-gradient(90deg, var(--c, var(--indigo)) 0 6px, transparent 6px 10px); }
+
+/* case files: stitched patches */
+.patches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; align-items: start; }
+.patch { position: relative; background: var(--patch); border-radius: 8px; padding: 30px 30px 26px; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 10px 26px rgba(80, 60, 30, 0.07); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.patch:nth-child(4n + 2) { transform: rotate(0.5deg); } .patch:nth-child(4n + 3) { transform: rotate(-0.4deg); }
+.patch:hover { transform: none; }
+.patch > svg.edge { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.patch .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.patch .kind { color: var(--c); font-weight: 700; }
+.patch h3 { font-size: 1.55rem; margin: 0.5rem 0 0.4rem; }
+.patch .what { color: var(--muted); font-family: var(--serif); font-style: italic; margin: 0 0 0.6rem; }
+.patch svg.thread { display: block; width: 100%; height: 70px; overflow: visible; cursor: pointer; }
+.patch .open { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; color: var(--c); font-family: var(--sc); font-weight: 700; letter-spacing: 0.08em; font-size: 0.95rem; }
+.patch .open::after { content: "+"; display: inline-grid; place-items: center; width: 22px; height: 22px; border: 1.6px dashed currentColor; border-radius: 50%; font-family: var(--sans); font-size: 1rem; line-height: 1; transition: transform 0.3s; }
+.patch.on .open::after { transform: rotate(45deg); }
+.patch .open:focus-visible { outline: 2px dashed var(--c); outline-offset: 4px; }
+.patch .body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.55s ease; }
+.patch.on .body { grid-template-rows: 1fr; }
+.patch .body > div { overflow: hidden; min-height: 0; }
+.patch dl { margin: 1rem 0 0; }
+.patch dt { font-family: var(--sc); font-weight: 700; letter-spacing: 0.08em; color: var(--muted); font-size: 0.86rem; margin-top: 0.9rem; }
+.patch dd { margin: 0.15rem 0 0; }
+.patch dd.result { font-family: var(--serif); font-size: 1.25rem; line-height: 1.38; color: var(--c); font-weight: 500; }
+
+/* what's next: the tree of life */
+.tree { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; padding-top: 150px; }
+.tree > svg { position: absolute; left: 0; top: 0; width: 100%; height: 170px; overflow: visible; }
+.branch { position: relative; text-align: center; padding: 24px 22px 22px; background: var(--patch); border-radius: 50% 50% 10px 10px / 34px 34px 10px 10px; }
+.branch::before { content: ""; position: absolute; inset: 7px; border: 2px dashed var(--c); border-radius: inherit; opacity: 0.7; pointer-events: none; }
+.branch h3 { font-size: 1.45rem; color: var(--c); margin-bottom: 0.8rem; }
+.branch ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.branch li { padding: 2px 11px; border-radius: 999px; background: var(--cloth); font-size: 0.98rem; }
+.branch p { color: var(--muted); font-size: 0.98rem; margin: 0.9rem 0 0; }
+
+/* skills: borders, the way a kantha is framed in bands */
+.bands { display: grid; gap: 18px; }
+.band { position: relative; display: grid; grid-template-columns: 13rem 1fr; gap: 10px 26px; align-items: center; padding: 18px 22px; }
+.band > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.band h3 { font-size: 1.32rem; color: var(--c); }
+.band ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; }
+.band li { font-size: 1.02rem; }
+.band li::first-letter { text-transform: uppercase; }
+.band li:not(:last-child)::after { content: "✕"; font-size: 0.6rem; color: var(--c); margin: 0 12px; vertical-align: 2px; opacity: 0.8; }
+.edu { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.edu > div { padding: 18px 22px; background: var(--patch); border-radius: 6px; position: relative; }
+.edu > div::before { content: ""; position: absolute; inset: 6px; border: 2px dashed var(--turmeric); border-radius: 4px; opacity: 0.6; pointer-events: none; }
+.edu h3 { font-size: 1.2rem; }
+.edu p { margin: 0.3rem 0 0; color: var(--muted); font-size: 1rem; }
+
+/* contact */
+#contact { padding-bottom: 120px; }
+.close { display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; justify-content: center; max-width: 900px; margin: 0 auto; }
+.medallion { position: relative; width: 220px; aspect-ratio: 1; }
+.medallion img { position: absolute; inset: 17%; width: 66%; height: 66%; border-radius: 50%; object-fit: cover; object-position: center top; }
+.medallion svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.mail { font-family: var(--serif); font-size: clamp(1.4rem, 3.4vw, 2.4rem); text-decoration: none; overflow-wrap: anywhere; line-height: 1.2; }
+.mail:hover { color: var(--madder); }
+.links { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.links a { display: inline-block; padding: 6px 16px; border: 2px dashed var(--indigo); border-radius: 999px; text-decoration: none; font-family: var(--sc); font-weight: 700; letter-spacing: 0.06em; color: var(--indigo); }
+.links a:hover { background: var(--indigo); color: var(--cloth); border-style: solid; }
+footer { position: relative; z-index: 2; text-align: center; padding: 0 var(--pad) 44px; }
+
+@media (max-width: 960px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .panel { max-width: 440px; }
+  .moorings { grid-template-columns: 1fr 1fr; }
+  .patches { grid-template-columns: minmax(0, 1fr); }
+  .tree { grid-template-columns: minmax(0, 1fr); padding-top: 30px; }
+  .tree > svg { display: none; }
+  .band { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1.06rem; }
+  .bar nav a.opt { display: none; }
+  .river svg.water, .boat { display: none; }
+  .moorings { grid-template-columns: minmax(0, 1fr); }
+  .patch { padding: 26px 22px 22px; }
+  .edu { grid-template-columns: 1fr; }
+  .close { grid-template-columns: 1fr; justify-items: start; }
+  .medallion { width: 170px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .patch, .patch .body { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="name" href="#top">{{identity.shortName}}</a>
+    <nav aria-label="Sections">
+      <a href="#career" class="opt">Career</a>
+      <a href="#cases">Case files</a>
+      <a href="#next" class="opt">What’s next</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<svg id="seam" aria-hidden="true"></svg>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="who sc">{{identity.name}}, {{identity.city}}</p>
+      <h1>{{#hero.haiku}}<span>{{.}}</span> {{/hero.haiku}}</h1>
+      <p class="lede">{{hero.intro}}</p>
+      <p class="note">Every line on this page is a running stitch. Scroll, and the thread keeps sewing.</p>
+    </div>
+    <div class="panel" id="panel">
+      <svg id="panel-svg" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="portrait"><img src="data:image/jpeg;base64,%%HEAD%%" alt="{{photos.headAlt}}"></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section id="career">
+  <div class="wrap">
+    <div class="shead"><svg class="motif" data-motif="boat" aria-hidden="true"></svg><h2>{{sections.career.title}}</h2><p class="intro">{{sections.career.intro}}</p></div>
+    <div class="river" id="river">
+      <svg class="water" id="water" aria-hidden="true"></svg>
+      <svg class="boat" id="boat" viewBox="0 0 64 44" aria-hidden="true"></svg>
+      <div class="moorings">
+{{#experience}}        <article class="mooring" data-n="{{num}}">
+          <p class="when"><time datetime="{{datetime}}">{{date}}</time></p>
+          <h3>{{title}}</h3>
+          <p class="role">{{role}}</p>
+          <p>{{summary}}</p>
+          <p class="reach"><i style="width:{{num}}2px" data-reach="{{num}}"></i>{{scope}}</p>
+        </article>
+{{/experience}}      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="shead"><svg class="motif" data-motif="fish" aria-hidden="true"></svg><h2>{{sections.cases.title}}</h2><p class="intro">{{sections.cases.intro}}</p></div>
+    <div class="patches">
+{{#projects}}      <article class="patch" data-n="{{num}}">
+        <svg class="edge" aria-hidden="true"></svg>
+        <div class="top"><p class="kind sc">{{kind}}</p><p class="sc">Case {{letter}}</p></div>
+        <h3>{{headline}}</h3>
+        <p class="what">{{name}}</p>
+        <svg class="thread" aria-hidden="true"></svg>
+        <button type="button" class="open" aria-expanded="false" aria-controls="case-{{num}}">Pull the thread</button>
+        <div class="body" id="case-{{num}}"><div><dl>
+          <dt>The problem</dt><dd>{{problem}}</dd>
+{{#options}}          <dt>The two options</dt><dd>{{options}}</dd>
+{{/options}}          <dt>The call</dt><dd>{{call}}</dd>
+          <dt>The result</dt><dd class="result">{{result}}</dd>
+        </dl></div></div>
+      </article>
+{{/projects}}    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+    <div class="shead"><svg class="motif" data-motif="leaf" aria-hidden="true"></svg><h2>{{sections.next.title}}</h2><p class="intro">{{sections.next.intro}}</p></div>
+    <div class="tree" id="tree">
+      <svg id="tree-svg" aria-hidden="true"></svg>
+{{#next}}      <div class="branch" data-n="{{num}}">
+        <h3>{{group}}</h3>
+        <ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>
+        <p>{{note}}</p>
+      </div>
+{{/next}}    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="shead"><svg class="motif" data-motif="border" aria-hidden="true"></svg><h2>{{sections.skills.title}}</h2></div>
+    <div class="bands">
+{{#skills}}      <div class="band" data-n="{{num}}">
+        <svg aria-hidden="true"></svg>
+        <h3>{{group}}</h3>
+        <ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>
+      </div>
+{{/skills}}    </div>
+    <div class="edu">
+{{#education}}      <div>
+        <h3>{{degree}}</h3>
+        <p>{{school}}, {{year}}.{{#thesis}} Thesis: <em>{{thesis}}</em>.{{/thesis}}</p>
+      </div>
+{{/education}}    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="shead"><svg class="motif" data-motif="sun" aria-hidden="true"></svg><h2>{{sections.contact.title}}</h2></div>
+    <div class="close">
+      <div class="medallion"><img src="data:image/jpeg;base64,%%HEAD%%" alt=""><svg id="medal" viewBox="0 0 220 220" aria-hidden="true"></svg></div>
+      <div>
+        <a class="mail" href="mailto:{{identity.email}}">{{identity.email}}</a>
+        <ul class="links">
+{{#links}}          <li><a href="{{url}}">{{label}}</a></li>
+{{/links}}        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="sc">{{identity.name}}, {{identity.city}}, {{identity.country}}</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS = 'http://www.w3.org/2000/svg', TAU = Math.PI * 2;
+  var THREADS = ['#B23A2E', '#2B3A67', '#C4861A', '#4E6B3A', '#221E1A'];
+  function $(id) { return document.getElementById(id); }
+  function all(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
+  function mk(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  /* a seeded wobble so every stitch line looks hand-sewn, but the same on each visit */
+  function rnd(seed) { var s = seed % 2147483647; if (s <= 0) s += 2147483646; return function () { s = s * 16807 % 2147483647; return (s - 1) / 2147483646; }; }
+  function pathOf(P) { var d = 'M' + P[0][0].toFixed(1) + ' ' + P[0][1].toFixed(1); for (var i = 1; i < P.length; i++) d += 'L' + P[i][0].toFixed(1) + ' ' + P[i][1].toFixed(1); return d; }
+  function smooth(a, b, x) { var t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
+
+  /* ---------- stitching: a dashed thread revealed by a mask that grows along its length ---------- */
+  var masks = 0, sewn = [];
+  function stitch(svg, d, color, opts) {
+    opts = opts || {};
+    var g = mk('g', opts.transform ? { transform: opts.transform } : {}, svg), id = 'nk-m' + (masks++);
+    var defs = svg.querySelector('defs') || mk('defs', {}, svg);
+    var m = mk('mask', { id: id, maskUnits: 'userSpaceOnUse', x: -2000, y: -2000, width: 8000, height: 99999 }, defs);
+    var reveal = mk('path', { d: d, fill: 'none', stroke: '#fff', 'stroke-width': (opts.w || 2.2) + 8, 'stroke-linecap': 'round' }, m);
+    var line = mk('path', { d: d, 'class': 'st', stroke: color, 'stroke-width': opts.w || 2.2, mask: 'url(#' + id + ')' }, g);
+    if (opts.dash) line.style.strokeDasharray = opts.dash;
+    /* keep each mask no bigger than its own stitch line, so scrolling stays cheap */
+    try { var bb = line.getBBox(), pad = (opts.w || 2.2) + 10; if (bb.width + bb.height > 0) { m.setAttribute('x', bb.x - pad); m.setAttribute('y', bb.y - pad); m.setAttribute('width', bb.width + pad * 2); m.setAttribute('height', bb.height + pad * 2); } } catch (e) {}
+    var L = reveal.getTotalLength ? reveal.getTotalLength() : 1000;
+    reveal.style.strokeDasharray = L + ' ' + (L + 10);
+    var item = { reveal: reveal, line: line, L: L, k: 0, mask: 'url(#' + id + ')' };
+    set(item, opts.k == null ? 0 : opts.k);
+    sewn.push(item);
+    return item;
+  }
+  function set(item, k) {
+    item.k = k; item.reveal.style.strokeDashoffset = (item.L * (1 - k)).toFixed(1);
+    /* a fully sewn line needs no mask; dropping it keeps scrolling smooth */
+    if (k >= 1) item.line.removeAttribute('mask'); else if (!item.line.hasAttribute('mask')) item.line.setAttribute('mask', item.mask);
+  }
+  function sew(items, dur, delay) {   /* animate a group of stitch lines in sequence */
+    if (still) { items.forEach(function (it) { set(it, 1); }); return; }
+    var t0 = performance.now() + (delay || 0), n = items.length;
+    (function step(now) {
+      var p = (now - t0) / dur, done = true;
+      items.forEach(function (it, i) { var a = i / n * 0.7, k = smooth(a, a + 0.3, p); set(it, k); if (k < 1) done = false; });
+      if (!done) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  function onView(el, fn) {
+    if (!('IntersectionObserver' in window) || still) { fn(); return; }
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); fn(); } }, { threshold: 0.25 });
+    io.observe(el);
+  }
+
+  /* ---------- the hero panel: lotus at the centre, a paisley in each corner, a stitched border ---------- */
+  var ps = $('panel-svg'), C = 300, groups = [];
+  (function panel() {
+    var r = rnd(7), B = [], k;
+    /* border: two running-stitch frames, then a wave band between them */
+    function frame(inset, color, wob) {
+      var P = [], N = 220, s = 600 - inset * 2;
+      for (var i = 0; i <= N; i++) {
+        var u = i / N * 4, side = Math.floor(u) % 4, f = u - Math.floor(u), x, y;
+        if (side === 0) { x = inset + f * s; y = inset; } else if (side === 1) { x = 600 - inset; y = inset + f * s; }
+        else if (side === 2) { x = 600 - inset - f * s; y = 600 - inset; } else { x = inset; y = 600 - inset - f * s; }
+        P.push([x + (r() - 0.5) * wob, y + (r() - 0.5) * wob]);
+      }
+      return pathOf(P);
+    }
+    B.push(stitch(ps, frame(12, THREADS[0], 1.4), THREADS[0]));
+    B.push(stitch(ps, frame(34, THREADS[1], 1.4), THREADS[1]));
+    var W = [], N = 360;
+    for (var i = 0; i <= N; i++) {
+      var u = i / N * 4, side = Math.floor(u) % 4, f = u - Math.floor(u), s = 554, inset = 23, base, off = Math.sin(f * s / 11) * 5, x, y;
+      if (side === 0) { x = inset + f * s; y = inset + off; } else if (side === 1) { x = 600 - inset + off; y = inset + f * s; }
+      else if (side === 2) { x = 600 - inset - f * s; y = 600 - inset + off; } else { x = inset + off; y = 600 - inset - f * s; }
+      W.push([x, y]);
+    }
+    B.push(stitch(ps, pathOf(W), THREADS[2], { w: 1.8, dash: '4 4' }));
+    groups.push(B);
+    /* paisleys (kalka) in the corners, their curled tips turned toward the centre */
+    var K = [], KALKA = 'M0 -44 C28 -42 42 -12 36 14 C30 40 -6 50 -27 36 C-46 22 -40 -6 -21 -13 C-6 -18 5 -7 -1 4 C-5 11 -14 8 -13 1';
+    var VEIN = 'M-12 22 C2 26 22 16 24 -4 C26 -22 14 -34 2 -38';
+    [[96, 96, 135], [504, 96, 225], [504, 504, 315], [96, 504, 45]].forEach(function (c, ci) {
+      var t = 'translate(' + c[0] + ' ' + c[1] + ') rotate(' + c[2] + ')';
+      K.push(stitch(ps, KALKA, THREADS[ci % 2 ? 1 : 0], { transform: t + ' scale(1.05)', w: 2.1 }));
+      K.push(stitch(ps, KALKA, THREADS[2], { transform: t + ' scale(0.62) translate(-4 4)', w: 2.6 }));
+      K.push(stitch(ps, VEIN, THREADS[3], { transform: t, w: 1.6, dash: '3 4' }));
+    });
+    groups.push(K);
+    /* the lotus: three rings of petals around the portrait */
+    var Lo = [];
+    function petal(a0, r0, r1, wid) {   /* outline from base to pointed tip and back */
+      var P = [], dx = Math.cos(a0), dy = Math.sin(a0), px = -dy, py = dx;
+      for (var j = 0; j <= 48; j++) {
+        var t = j / 48, side = t < 0.5 ? 1 : -1, sP = t < 0.5 ? t * 2 : 2 - t * 2;
+        var hw = wid * Math.pow(Math.sin(Math.PI * Math.min(1, sP * 0.92 + 0.04)), 0.75) * (1 - 0.25 * sP), rad = r0 + (r1 - r0) * sP;
+        P.push([C + dx * rad + px * hw * side, C + dy * rad + py * hw * side]);
+      }
+      return pathOf(P);
+    }
+    [[12, 100, 158, 17, 0, 1], [12, 112, 214, 26, 0.5, 0], [24, 206, 248, 9, 0.25, 2]].forEach(function (ring) {
+      for (var p = 0; p < ring[0]; p++) {
+        var a0 = (p + ring[4]) / ring[0] * TAU - Math.PI / 2;
+        Lo.push(stitch(ps, petal(a0, ring[1], ring[2], ring[3]), THREADS[ring[5]], { w: ring[5] === 2 ? 1.7 : 2.2 }));
+        if (ring[5] === 0) Lo.push(stitch(ps, petal(a0, ring[1] + 22, ring[2] - 26, ring[3] * 0.42), THREADS[2], { w: 1.6, dash: '3 4' }));
+      }
+    });
+    var ringP = []; for (k = 0; k <= 120; k++) { var aa = k / 120 * TAU; ringP.push([C + Math.cos(aa) * 96, C + Math.sin(aa) * 96]); }
+    Lo.unshift(stitch(ps, pathOf(ringP), THREADS[4], { w: 2.4 }));
+    groups.push(Lo);
+  })();
+  sew(groups[2], 1500, 150); sew(groups[1], 1300, 900); sew(groups[0], 1600, 500);
+
+  /* ---------- small section motifs ---------- */
+  var MOTIF = {
+    boat: function (s) { return ['M8 18 Q60 34 112 18', 'M14 18 Q60 8 106 18', 'M60 14 L60 -6 L80 8 Z', 'M20 26 Q40 30 60 30'].map(function (d, i) { return [d, THREADS[i % 2 ? 1 : 0]]; }); },
+    fish: function () { return [['M10 14 Q40 -6 76 14 Q40 34 10 14 Z', THREADS[1]], ['M76 14 L104 2 L100 14 L104 26 Z', THREADS[0]], ['M26 14 Q40 8 56 14', THREADS[2]]]; },
+    leaf: function () { return [['M60 30 L60 -4', THREADS[3]], ['M60 14 Q36 10 24 -2 Q46 -2 60 14', THREADS[3]], ['M60 8 Q84 4 96 -8 Q74 -8 60 8', THREADS[3]], ['M60 22 Q38 22 28 14', THREADS[2]], ['M60 20 Q82 20 92 12', THREADS[2]]]; },
+    border: function () { var d = 'M0 14'; for (var i = 0; i < 12; i++) d += ' L' + (i * 10 + 5) + ' ' + (i % 2 ? 4 : 24); return [[d, THREADS[0]], ['M0 30 L120 30', THREADS[1]], ['M0 -2 L120 -2', THREADS[1]]]; },
+    sun: function () { var o = [['M74 14 A14 14 0 1 1 46 14 A14 14 0 1 1 74 14', THREADS[2]]]; for (var i = 0; i < 10; i++) { var a = i / 10 * TAU; o.push(['M' + (60 + Math.cos(a) * 20) + ' ' + (14 + Math.sin(a) * 20) + ' L' + (60 + Math.cos(a) * 30) + ' ' + (14 + Math.sin(a) * 30), THREADS[0]]); } return o; }
+  };
+  all('svg.motif').forEach(function (svg) {
+    svg.setAttribute('viewBox', '0 -10 120 50');
+    var items = MOTIF[svg.dataset.motif]().map(function (m) { return stitch(svg, m[0], m[1], { w: 2 }); });
+    onView(svg, function () { sew(items, 900, 0); });
+  });
+
+  /* ---------- career: the river, and a boat that follows your reading ---------- */
+  var water = $('water'), boat = $('boat'), river = $('river'), riverPath = null, moors = all('.mooring');
+  moors.forEach(function (m, i) { m.style.setProperty('--c', THREADS[[1, 0, 2, 3][i % 4]]); });
+  all('[data-reach]').forEach(function (i) { i.style.width = (16 + (+i.dataset.reach) * 26) + 'px'; });
+  (function drawBoat() {
+    [['M6 22 Q32 40 58 22 Z', THREADS[0]], ['M32 22 L32 2 L50 18 Z', THREADS[1]], ['M10 26 Q32 34 54 26', THREADS[2]]].forEach(function (p) { mk('path', { d: p[0], 'class': 'st', stroke: p[1], 'stroke-width': 2, 'stroke-dasharray': '4 3', fill: p[0].slice(-1) === 'Z' ? 'rgba(248,244,234,0.9)' : 'none' }, boat); });
+  })();
+  var riverItems = [];
+  function drawRiver() {
+    while (water.firstChild) water.removeChild(water.firstChild);
+    var W = water.clientWidth, P = [], P2 = [];
+    if (!W) { riverPath = null; return; }   /* the river is hidden on phones */
+    water.setAttribute('viewBox', '0 0 ' + W + ' 150');
+    for (var i = 0; i <= 200; i++) { var x = i / 200 * W; P.push([x, 78 + Math.sin(i / 200 * TAU * 2.2) * 26]); P2.push([x, 96 + Math.sin(i / 200 * TAU * 2.2 + 0.5) * 22]); }
+    riverItems = [stitch(water, pathOf(P), THREADS[1], { k: 1 }), stitch(water, pathOf(P2), THREADS[1], { w: 1.5, dash: '3 5', k: 1 })];
+    riverPath = riverItems[0].line;
+    /* a stitched mooring post above each role */
+    moors.forEach(function (m, i) {
+      var r = m.getBoundingClientRect(), wr = water.getBoundingClientRect(), x = r.left - wr.left + r.width / 2;
+      var y = 78 + Math.sin(x / W * TAU * 2.2) * 26;
+      mk('circle', { cx: x, cy: y, r: 7, fill: '#F8F4EA', stroke: getComputedStyle(m).getPropertyValue('--c'), 'stroke-width': 2, 'stroke-dasharray': '3 3' }, water);
+      mk('path', { d: 'M' + x + ' ' + (y + 9) + ' L' + x + ' 150', 'class': 'st', stroke: getComputedStyle(m).getPropertyValue('--c'), 'stroke-width': 1.6, 'stroke-dasharray': '3 4' }, water);
+    });
+    sail();
+  }
+  function sail() {
+    if (!riverPath || !water.clientWidth) return;
+    var r = river.getBoundingClientRect(), vh = window.innerHeight;
+    var p = Math.max(0, Math.min(1, (vh * 0.75 - r.top) / (r.height * 0.9)));
+    var L = riverPath.getTotalLength(), pt = riverPath.getPointAtLength(L * (0.02 + p * 0.96)), pt2 = riverPath.getPointAtLength(Math.min(L, L * (0.02 + p * 0.96) + 4));
+    var ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+    boat.style.transform = 'translate(' + (pt.x - 32) + 'px,' + (pt.y - 34) + 'px) rotate(' + (ang * 0.6).toFixed(1) + 'deg)';
+  }
+  drawRiver();
+  window.addEventListener('resize', drawRiver);
+  window.addEventListener('scroll', sail, { passive: true });
+
+  /* ---------- case files: each patch has a tangled thread that pulls straight when opened ---------- */
+  all('.patch').forEach(function (el, i) {
+    var color = THREADS[i % 5 === 4 ? 4 : [0, 1, 2, 3][i % 4]];
+    el.style.setProperty('--c', color);
+    var edge = el.querySelector('svg.edge'), th = el.querySelector('svg.thread'), btn = el.querySelector('.open'), seed = i + 3, k = 0, raf = 0, item = null, edgeItem = null;
+    function drawEdge() {
+      while (edge.firstChild) edge.removeChild(edge.firstChild);
+      var w = el.clientWidth, h = el.clientHeight, r = rnd(seed * 31), P = [], inset = 9, N = 160;
+      edge.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      var per = 2 * (w + h - 4 * inset);
+      for (var j = 0; j <= N; j++) {
+        var d = j / N * per, x, y, a = w - 2 * inset, b = h - 2 * inset;
+        if (d < a) { x = inset + d; y = inset; } else if (d < a + b) { x = w - inset; y = inset + d - a; }
+        else if (d < 2 * a + b) { x = w - inset - (d - a - b); y = h - inset; } else { x = inset; y = h - inset - (d - 2 * a - b); }
+        P.push([x + (r() - 0.5) * 1.2, y + (r() - 0.5) * 1.2]);
+      }
+      edgeItem = stitch(edge, pathOf(P), color, { k: 1, w: 2 });
+    }
+    function drawThread() {
+      while (th.firstChild) th.removeChild(th.firstChild);
+      var W = th.clientWidth || 400, P = [], q = k * k * (3 - 2 * k);
+      th.setAttribute('viewBox', '0 0 ' + W + ' 70');
+      for (var j = 0; j <= 180; j++) {
+        var u = j / 180, e = smooth(0.08, 0.3, u) * smooth(0.92, 0.7, u) * (1 - q);
+        var x = 4 + (W - 8) * u + e * 60 * (0.6 * Math.sin(TAU * (6 + seed % 3) * u + seed) + 0.4 * Math.sin(TAU * (11 + seed % 4) * u));
+        var y = 35 + e * 22 * (0.6 * Math.cos(TAU * (5 + seed % 2) * u + seed * 1.7) + 0.4 * Math.sin(TAU * 9 * u + seed));
+        P.push([x, y]);
+      }
+      mk('path', { d: pathOf(P), 'class': 'st', stroke: color, 'stroke-width': 2.2 }, th);
+      mk('circle', { cx: W - 6, cy: 35, r: 4.5, fill: color }, th);
+    }
+    function toggle() {
+      var on = !el.classList.contains('on');
+      el.classList.toggle('on', on); btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      btn.textContent = on ? 'Let it go' : 'Pull the thread';
+      cancelAnimationFrame(raf);
+      var from = k, to = on ? 1 : 0, t0 = performance.now();
+      if (still) { k = to; drawThread(); } else (function step(now) { var p = Math.min(1, (now - t0) / 700); k = from + (to - from) * p; drawThread(); if (p < 1) raf = requestAnimationFrame(step); })(t0);
+    }
+    btn.addEventListener('click', toggle); th.addEventListener('click', toggle);
+    drawThread(); drawEdge();
+    window.addEventListener('resize', drawThread);
+    /* the stitched edge follows the patch as it opens and closes */
+    var queued = false, lastH = el.clientHeight, lastW = el.clientWidth;
+    if ('ResizeObserver' in window) new ResizeObserver(function () {
+      if (queued || (el.clientHeight === lastH && el.clientWidth === lastW)) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; lastH = el.clientHeight; lastW = el.clientWidth; var k0 = edgeItem ? edgeItem.k : 1; drawEdge(); set(edgeItem, k0); });
+    }).observe(el);
+    onView(el, function () { set(edgeItem, 0); sew([edgeItem], 1100, i % 2 * 120); });
+  });
+
+  /* ---------- what's next: a tree of life whose branches reach the three groups ---------- */
+  var tsvg = $('tree-svg'), tree = $('tree'), branches = all('.branch');
+  branches.forEach(function (b, i) { b.style.setProperty('--c', THREADS[[0, 1, 2][i % 3]]); });
+  var treeItems = [];
+  function drawTree() {
+    while (tsvg.firstChild) tsvg.removeChild(tsvg.firstChild);
+    if (getComputedStyle(tsvg).display === 'none') return;
+    var W = tree.clientWidth, cx = W / 2; tsvg.setAttribute('viewBox', '0 0 ' + W + ' 170');
+    treeItems = [stitch(tsvg, 'M' + cx + ' 0 L' + cx + ' 60', THREADS[3], { w: 2.6 })];
+    branches.forEach(function (b, i) {
+      var r = b.getBoundingClientRect(), tr = tree.getBoundingClientRect(), x = r.left - tr.left + r.width / 2;
+      treeItems.push(stitch(tsvg, 'M' + cx + ' 60 C' + cx + ' 110 ' + x + ' 90 ' + x + ' 150', THREADS[3], { w: 2.2 }));
+      [0.35, 0.65].forEach(function (t, j) {   /* leaves along each branch */
+        var px = cx + (x - cx) * t, py = 60 + 90 * t, s = j ? -1 : 1;
+        treeItems.push(stitch(tsvg, 'M' + px + ' ' + py + ' q' + (14 * s) + ' -18 ' + (28 * s) + ' -10 q' + (-14 * s) + ' 12 ' + (-28 * s) + ' 10', THREADS[[0, 1, 2][i % 3]], { w: 1.8 }));
+      });
+    });
+  }
+  drawTree();
+  window.addEventListener('resize', drawTree);
+  onView(tree, function () { treeItems.forEach(function (t) { set(t, 0); }); sew(treeItems, 1400, 0); });
+
+  /* ---------- skills: each band framed by a different border stitch ---------- */
+  all('.band').forEach(function (b, i) {
+    var color = THREADS[[1, 0, 2][i % 3]], svg = b.querySelector('svg'); b.style.setProperty('--c', color);
+    function draw() {
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var w = b.clientWidth, h = b.clientHeight, P = [], Q = [];
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      for (var x = 0; x <= w; x += 9) { P.push([x, 4 + (Math.floor(x / 9) % 2) * 6]); Q.push([x, h - 4 - (Math.floor(x / 9) % 2) * 6]); }
+      var a = stitch(svg, pathOf(P), color, { w: 1.6, dash: i === 1 ? '2 3' : '7 5', k: 1 }), c = stitch(svg, pathOf(Q), color, { w: 1.6, dash: i === 1 ? '2 3' : '7 5', k: 1 });
+      return [a, c];
+    }
+    var items = draw();
+    window.addEventListener('resize', function () { items = draw(); });
+    onView(b, function () { items.forEach(function (t) { set(t, 0); }); sew(items, 1000, 0); });
+  });
+
+  /* ---------- contact: a medallion of petals around the portrait ---------- */
+  (function medal() {
+    var svg = $('medal'), items = [], c = 110;
+    for (var p = 0; p < 14; p++) {
+      var a0 = p / 14 * TAU, P = [];
+      for (var j = 0; j <= 30; j++) { var t = j / 30, side = t < 0.5 ? -1 : 1, q = t < 0.5 ? t * 2 : (1 - t) * 2, rad = 76 + 30 * Math.sin(q * Math.PI / 2), ang = a0 + side * 0.2 * Math.sin((1 - q) * Math.PI); P.push([c + Math.cos(ang) * rad, c + Math.sin(ang) * rad]); }
+      items.push(stitch(svg, pathOf(P), THREADS[p % 2 ? 0 : 1], { w: 2 }));
+    }
+    var R = []; for (var k = 0; k <= 100; k++) { var a = k / 100 * TAU; R.push([c + Math.cos(a) * 74, c + Math.sin(a) * 74]); }
+    items.push(stitch(svg, pathOf(R), THREADS[2], { w: 2.2 }));
+    onView(svg, function () { sew(items, 1300, 0); });
+  })();
+
+  /* ---------- the seam: one long thread sewn down the left side as you scroll ---------- */
+  var seam = $('seam'), seamItem = null, seamClip = null, seamStart = 0, seamEnd = 1;
+  function drawSeam() {
+    while (seam.firstChild) seam.removeChild(seam.firstChild);
+    var H = document.documentElement.scrollHeight, W = window.innerWidth, x0 = Math.max(16, (W - 1200) / 2 + 10) * (W < 640 ? 0.4 : 1);
+    seam.setAttribute('height', H); seam.setAttribute('viewBox', '0 0 ' + W + ' ' + H); seam.style.height = H + 'px';
+    var P = [], start = document.querySelector('main').offsetTop;
+    for (var y = start; y <= H - 40; y += 6) P.push([x0 + Math.sin(y / 140) * (W < 640 ? 4 : 10), y]);
+    if (P.length > 1) {
+      var defs = mk('defs', {}, seam), cp = mk('clipPath', { id: 'nk-seam-clip' }, defs);
+      seamClip = mk('rect', { x: 0, y: 0, width: W, height: start }, cp);
+      seamItem = mk('path', { d: pathOf(P), 'class': 'st', stroke: THREADS[0], 'stroke-width': 2, 'clip-path': 'url(#nk-seam-clip)' }, seam);
+      seamStart = start; seamEnd = H - 40;
+    }
+    stitchSeam();
+  }
+  function stitchSeam() {
+    if (!seamItem) return;
+    var y = still ? seamEnd : Math.max(seamStart, Math.min(seamEnd, window.scrollY + window.innerHeight * 0.7));
+    seamClip.setAttribute('height', y.toFixed(0));
+  }
+  window.addEventListener('scroll', stitchSeam, { passive: true });
+  window.addEventListener('resize', drawSeam);
+  setTimeout(drawSeam, 60);
+  /* opening a case makes the page longer, so the seam is re-cut to the new length */
+  var seamQueued = false, mainH = 0;
+  if ('ResizeObserver' in window) new ResizeObserver(function () {
+    var h = document.querySelector('main').offsetHeight; if (h === mainH || seamQueued) return; mainH = h; seamQueued = true;
+    setTimeout(function () { seamQueued = false; drawSeam(); }, 120);
+  }).observe(document.querySelector('main'));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { drawSeam(); drawRiver(); drawTree(); });
+
+  /* the haiku keeps its three lines on every screen */
+  var h1 = document.querySelector('.hero h1');
+  function fit() {
+    h1.style.fontSize = '';
+    var max = parseFloat(getComputedStyle(h1).fontSize), room = h1.clientWidth, widest = 0;
+    all('span', h1).forEach(function (s) { var r = document.createRange(); r.selectNodeContents(s); widest = Math.max(widest, r.getBoundingClientRect().width); });
+    if (widest > room) h1.style.fontSize = (max * room / widest * 0.98).toFixed(2) + 'px';
+  }
+  fit(); window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+<\/script>
+</body>
+</html>
+
+</script>
 <script type="text/x-kmh-style" id="kmh-style-terminal">
 <!DOCTYPE html>
 <html lang="en">
@@ -1256,7 +1894,7 @@ footer { position: relative; z-index: 2; padding: 0 var(--pad) 46px; max-width: 
   --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { height: 100%; overflow: hidden; overscroll-behavior: none; } /* Updated by Mobashyer D-17-11-26 the terminal fills the screen; only its output scrolls */
 body {
   margin: 0; color: var(--white); font-family: var(--mono); font-size: 15px; line-height: 1.6;
   background: radial-gradient(80% 70% at 50% 0%, #10201A 0%, var(--desk) 60%) fixed, var(--desk);
@@ -1268,9 +1906,9 @@ a:hover { color: var(--white); }
 :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
 button { font: inherit; }
 
-.desk { min-height: 100%; display: flex; flex-direction: column; align-items: center; padding: clamp(10px, 3vw, 34px) clamp(8px, 3vw, 34px) 84px; }
+.desk { height: 100vh; height: 100dvh; display: flex; flex-direction: column; align-items: center; padding: clamp(10px, 2.4vw, 26px) clamp(8px, 3vw, 34px) 64px; }
 .window {
-  position: relative; width: 100%; max-width: 1180px; height: calc(100vh - 120px); height: calc(100svh - 120px); min-height: 520px;
+  position: relative; width: 100%; max-width: 1180px; flex: 1 1 auto; min-height: 0;
   display: grid; grid-template-rows: auto 1fr auto auto; background: var(--win); border: 1px solid rgba(124, 242, 154, 0.22); border-radius: 12px; overflow: hidden;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 120px rgba(124, 242, 154, 0.06);
 }
@@ -1347,8 +1985,9 @@ pre.ascii { margin: 0; font-size: 5.2px; line-height: 5.6px; letter-spacing: 0.4
 }
 @media (max-width: 600px) {
   body { font-size: 13.5px; }
-  .desk { padding: 6px 6px 120px; }
-  .window { height: calc(100svh - 132px); min-height: 440px; border-radius: 10px; }
+  .desk { padding: 6px 6px 86px; }
+  .window { border-radius: 10px; }
+  .status { display: none; }
   .out { padding: 14px 14px 10px; }
   .prompt { padding: 9px 12px; }
   .prompt .pre { display: none; }
@@ -1530,10 +2169,10 @@ pre.ascii { margin: 0; font-size: 5.2px; line-height: 5.6px; letter-spacing: 0.4
   function contact() {
     var n = [line(C.sections.contact.title, 'h'), blank()];
     var m = el('a', null, C.identity.email); m.href = 'mailto:' + C.identity.email;
-    n.push(line([span('d', 'email     '), m]));
+    n.push(line([span('d', 'email        '), m]));
     C.links.forEach(function (l) {
       var a = el('a', null, l.url.replace(/^https?:\/\//, '')); a.href = l.url;
-      n.push(line([span('d', (l.label.toLowerCase() + '          ').slice(0, 10)), a]));
+      n.push(line([span('d', (l.label.toLowerCase() + '              ').slice(0, Math.max(13, l.label.length + 2))), a]));  /* Updated by Mobashyer D-17-11-26 labels no longer run into the link */
     });
     return n;
   }
