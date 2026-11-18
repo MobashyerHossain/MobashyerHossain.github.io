@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://mobashyerhossain.github.io/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <image:image><image:loc>https://mobashyerhossain.github.io/mobashyer-hossain.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://mobashyerhossain.github.io/media/ebl-powercard.jpg</video:thumbnail_loc>
+      <video:title>EBL PowerCARD by Eastern Bank PLC, payment terminal walkthrough</video:title>
+      <video:description>Sale from the home screen: key the amount, enter the PIN, approved and printed. Also cash withdrawal, refund, tip adjust, offline and pre-authorisation.</video:description>
+      <video:content_loc>https://mobashyerhossain.github.io/media/ebl-powercard.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://mobashyerhossain.github.io/media/pubali-hypercom.jpg</video:thumbnail_loc>
+      <video:title>PUBALI HyperCom by Pubali Bank PLC, payment terminal walkthrough</video:title>
+      <video:description>Sale from the home screen: key the amount, enter the PIN, approved and printed. Also cash advance, balance enquiry, offline and tip adjust.</video:description>
+      <video:content_loc>https://mobashyerhossain.github.io/media/pubali-hypercom.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://mobashyerhossain.github.io/media/tcbl-tranzware.jpg</video:thumbnail_loc>
+      <video:title>TCBL TranzWare by The City Bank, payment terminal walkthrough</video:title>
+      <video:description>One tap to sell: contactless, EMV chip, magstripe or UPI QR, approved and printed. Void, settlement, logon and batch reports.</video:description>
+      <video:content_loc>https://mobashyerhossain.github.io/media/tcbl-tranzware.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://mobashyerhossain.github.io/media/ibbl-b-smartvista.jpg</video:thumbnail_loc>
+      <video:title>IBBL B SmartVista by Islami Bank Bangladesh PLC, payment terminal walkthrough</video:title>
+      <video:description>Card cash withdrawal from the first screen: insert, swipe or tap, enter the PIN, approved and printed. Also balance enquiry, PIN set and terminal management.</video:description>
+      <video:content_loc>https://mobashyerhossain.github.io/media/ibbl-b-smartvista.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://mobashyerhossain.github.io/media/prime-hypercom.jpg</video:thumbnail_loc>
+      <video:title>PRIME HyperCom by Prime Bank PLC, payment terminal walkthrough</video:title>
+      <video:description>Sale from the first screen: tap, insert or swipe, enter the PIN, approved and printed. Also EMI and Want2Buy instalment sales, and terminal management.</video:description>
+      <video:content_loc>https://mobashyerhossain.github.io/media/prime-hypercom.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://mobashyerhossain.github.io/certificates/pax-software-application-development-2022.pdf</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://mobashyerhossain.github.io/certificates/pax-paxme-soundbox-development-2023.pdf</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://mobashyerhossain.github.io/cv.pdf</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
 </urlset>
