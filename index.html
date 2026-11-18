@@ -35,12 +35,15 @@
 <script>(function () {
   /* Added by Mobashyer D-17-11-26: start downloading today's fonts while the rest of the page loads */
   var de = document.documentElement; de.className += ' kmh-js';
-  var F = {"untangle": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap", "blueprint": "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap", "nakshi": "https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500&family=Alegreya:ital,wght@0,400..700;1,400..600&display=swap", "terminal": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap", "archive": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600&family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap", "cyberpunk": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@500;600&display=swap", "living": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap", "week": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"}, K = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], M = {"sun": "untangle", "mon": "blueprint", "tue": "nakshi", "wed": "terminal", "thu": "archive", "fri": "cyberpunk", "sat": "living"}, q = '';
+  var F = {"untangle": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap", "blueprint": "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap", "nakshi": "https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500&family=Alegreya:ital,wght@0,400..700;1,400..600&display=swap", "terminal": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap", "archive": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600&family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap", "cyberpunk": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@500;600&display=swap", "living": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap", "week": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"}, K = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], M = {"untangle": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D10'/%3E%3Cpath d='M7 24V8l9 10 9-10v16' fill='none' stroke='%23E5483B' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E", "blueprint": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23123E7C'/%3E%3Cpath d='M8 4v24M16 4v24M24 4v24M4 8h24M4 16h24M4 24h24' stroke='%23EAF2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23EAF2FF' stroke-width='2'/%3E%3Cpath d='M6 27h20M6 25v4M26 25v4' stroke='%23EAF2FF' stroke-width='1.5'/%3E%3C/svg%3E", "nakshi": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F2ECDF'/%3E%3Cpath d='M16 6c4 4 4 8 0 12-4-4-4-8 0-12zM6 16c4-4 8-4 12 0-4 4-8 4-12 0zM26 16c-4-4-8-4-12 0 4 4 8 4 12 0z' fill='none' stroke='%23B23A2E' stroke-width='1.8' stroke-dasharray='2.4 1.8'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%232B3A67'/%3E%3C/svg%3E", "terminal": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070A08'/%3E%3Cpath d='M7 10l6 6-6 6' fill='none' stroke='%237CF29A' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 22h9' stroke='%23FFB547' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E", "archive": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='7' width='26' height='20' rx='2' fill='%23D9C9A3'/%3E%3Cpath d='M3 10h10l2-3h14' fill='none' stroke='%231F1D1A' stroke-width='1.6'/%3E%3Ccircle cx='23' cy='19' r='4' fill='none' stroke='%23A3362C' stroke-width='1.6'/%3E%3C/svg%3E", "cyberpunk": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307040F'/%3E%3Cpath d='M5 24V14h5v10M12 24V7h6v17M20 24V11h7v13' fill='none' stroke='%23FF2E88' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M3 27h26' stroke='%2328E0FF' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='11' r='1.4' fill='%2328E0FF'/%3E%3C/svg%3E", "living": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23E8E5DF'/%3E%3Cpath d='M7 22c5-12 13 2 18-10' fill='none' stroke='%230F7A70' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%231C2023'/%3E%3C/svg%3E"}, q = '';
   try { q = (new URLSearchParams(location.search).get('day') || '').toLowerCase(); } catch (e) {}
   if (q === 'all') q = 'week';
   var full = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(q); if (full >= 0) q = K[full];
   var s = q === 'week' ? 'week' : M[K.indexOf(q) >= 0 ? q : K[new Date().getDay()]], href = F[s];
   if (href) { var l = document.createElement('link'); l.rel = 'preload'; l.as = 'style'; l.href = href; document.head.appendChild(l); }
+  /* the tab shows the right day's icon from the very first moment */
+  var I = {"sun": "untangle", "mon": "blueprint", "tue": "nakshi", "wed": "terminal", "thu": "archive", "fri": "cyberpunk", "sat": "living"}, ic = I[s];
+  if (ic) { var o = document.querySelector('link[rel~="icon"]'); if (o) o.href = ic; }
 })();</script>
 <style>
 html.kmh-js #kmh-doc{display:none}
@@ -817,7 +820,7 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
 <title>{{meta.title}}</title>
 <meta name="description" content="{{meta.description}}">
 <meta name="theme-color" content="#123E7C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23123E7C'/%3E%3Cpath d='M16 3v7c0 5 8 3 8 8s-12 5-12 0 8-4 4 3v8' fill='none' stroke='%23EAF2FF' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23123E7C'/%3E%3Cpath d='M8 4v24M16 4v24M24 4v24M4 8h24M4 16h24M4 24h24' stroke='%23EAF2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23EAF2FF' stroke-width='2'/%3E%3Cpath d='M6 27h20M6 25v4M26 25v4' stroke='%23EAF2FF' stroke-width='1.5'/%3E%3C/svg%3E"><\!-- Updated by Mobashyer D-19-11-26: its own tab icon -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -3716,7 +3719,7 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
 <meta name="description" content="{{meta.description}}">
 <\!-- Updated by Mobashyer D-17-11-26: canonical, social and structured data now come from one shared block, added to every design -->
 <meta name="theme-color" content="#07040F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307040F'/%3E%3Cpath d='M16 3v7c0 5 8 3 8 8s-12 5-12 0 8-4 4 3v8' fill='none' stroke='%23FF2E88' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307040F'/%3E%3Cpath d='M5 24V14h5v10M12 24V7h6v17M20 24V11h7v13' fill='none' stroke='%23FF2E88' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M3 27h26' stroke='%2328E0FF' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='11' r='1.4' fill='%2328E0FF'/%3E%3C/svg%3E"><\!-- Updated by Mobashyer D-19-11-26: its own tab icon -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
@@ -5906,8 +5909,21 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
       '<svg width="100%" height="100%" style="position:absolute;inset:0;overflow:visible"><path fill="none" stroke="' + th[1] + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
       '<p style="position:absolute;left:0;right:0;bottom:12%;margin:0;text-align:center;font:500 13px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:' + th[1] + ';opacity:' + (covered ? 1 : 0) + '">' + esc(name) + '</p></div>';
   }
+  /* Added by Mobashyer D-19-11-26: every design has its own tab icon; it changes the moment a day is picked */
+  var WEEK_ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101316'/%3E%3Cg fill='%23E6B85C'%3E%3Crect x='5' y='8' width='4' height='16' rx='1'/%3E%3Crect x='11' y='8' width='4' height='16' rx='1'/%3E%3Crect x='17' y='8' width='4' height='16' rx='1'/%3E%3Crect x='23' y='8' width='4' height='16' rx='1' opacity='.5'/%3E%3C/g%3E%3C/svg%3E";
+  function iconFor(view) {
+    if (view === 'week') return WEEK_ICON;
+    var t = STYLES[MAP[view]] || STYLES[FALLBACK] || '', m = /<link rel="icon" href="([^"]+)"/.exec(t);
+    return m ? m[1] : null;
+  }
+  function setIcon(href) {
+    if (!href || !document.head) return;
+    Array.prototype.forEach.call(document.querySelectorAll('link[rel~="icon"]'), function (l) { l.parentNode.removeChild(l); });
+    var l = document.createElement('link'); l.rel = 'icon'; l.type = 'image/svg+xml'; l.href = href; document.head.appendChild(l);
+  }
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function leave(view, then) {
+    if (!EMBED) setIcon(iconFor(view));
     if (STILL || EMBED || !document.body) { then(); return; }
     transitioning = true;
     var holder = document.createElement('div'); holder.innerHTML = overlayHTML(view, false);
@@ -5970,6 +5986,7 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
     } else transitioning = false;
     document.open(); document.write(html); document.close();
     addWin.call(window, 'popstate', onPop);
+    if (!EMBED) setIcon(iconFor(view));   /* a freshly added icon link makes browsers update the tab straight away */
     document.documentElement.setAttribute('data-kmh-day', view);
     window.scrollTo(0, 0);
   }
