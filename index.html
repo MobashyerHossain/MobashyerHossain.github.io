@@ -5876,7 +5876,7 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
       '<header><div><p class="who">' + esc(c.identity.name) + ' · ' + esc(c.identity.city) + '</p><h1>Seven days, <i>seven designs</i></h1>' +
       '<p class="lede">The same portfolio, with the same facts and the same case files, in a different design for each day of the week. Your own weekday decides which one opens first. Pick any day to step inside.</p></div>' +
       '<p class="haiku">' + c.hero.haiku.map(esc).join('<br>') + '</p></header>' +
-      '<ul>' + cards + '</ul><p class="foot">Each thumbnail is live: it is the real page, shrunk.</p></div>' +
+      '<ul>' + cards + '</ul></div>' +   /* Updated by Mobashyer D-19-11-26: the "thumbnails are live" note is gone */
       LT + SCR + '>(function(){function fit(){document.querySelectorAll(".thumb").forEach(function(t){t.style.setProperty("--s",(t.clientWidth/1440).toFixed(4));});}fit();window.addEventListener("resize",fit);' +
       /* load the live pages one at a time, nearest first, only once they're near the screen */
       'var q=[],busy=false;function next(){if(busy)return;var f=q.shift();if(!f)return;busy=true;var done=false;function fin(){if(done)return;done=true;setTimeout(function(){f.classList.add("live");busy=false;next();},500);}f.addEventListener("load",fin);setTimeout(fin,6000);f.src=f.getAttribute("data-src");}' +
@@ -5916,10 +5916,24 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
     var t = STYLES[MAP[view]] || STYLES[FALLBACK] || '', m = /<link rel="icon" href="([^"]+)"/.exec(t);
     return m ? m[1] : null;
   }
+  /* Updated by Mobashyer D-19-11-26: browsers only redraw the tab icon once the page has finished loading, and skip an
+     icon whose address hasn't changed, so the icon is set again when loading ends, each time with a fresh address */
+  var iconSeq = 0;
   function setIcon(href) {
     if (!href || !document.head) return;
-    Array.prototype.forEach.call(document.querySelectorAll('link[rel~="icon"]'), function (l) { l.parentNode.removeChild(l); });
-    var l = document.createElement('link'); l.rel = 'icon'; l.type = 'image/svg+xml'; l.href = href; document.head.appendChild(l);
+    var url = href + '#' + (++iconSeq);
+    var l = document.querySelector('link[rel~="icon"]');
+    Array.prototype.forEach.call(document.querySelectorAll('link[rel~="icon"]'), function (x) { if (x !== l) x.parentNode.removeChild(x); });
+    if (!l) { l = document.createElement('link'); l.rel = 'icon'; document.head.appendChild(l); }
+    l.type = 'image/svg+xml'; l.href = url;
+  }
+  function settleIcon(view) {
+    var href = iconFor(view), gen = generation;
+    setIcon(href);
+    function again() { if (gen === generation) setIcon(href); }
+    if (document.readyState === 'complete') setTimeout(again, 0);
+    else addWin.call(window, 'load', function () { setTimeout(again, 0); });
+    setTimeout(again, 400); setTimeout(again, 1500);
   }
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function leave(view, then) {
@@ -5986,7 +6000,7 @@ nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: i
     } else transitioning = false;
     document.open(); document.write(html); document.close();
     addWin.call(window, 'popstate', onPop);
-    if (!EMBED) setIcon(iconFor(view));   /* a freshly added icon link makes browsers update the tab straight away */
+    if (!EMBED) settleIcon(view);
     document.documentElement.setAttribute('data-kmh-day', view);
     window.scrollTo(0, 0);
   }
