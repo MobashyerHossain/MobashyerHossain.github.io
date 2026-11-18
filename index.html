@@ -35,7 +35,7 @@
 <script>(function () {
   /* Added by Mobashyer D-17-11-26: start downloading today's fonts while the rest of the page loads */
   var de = document.documentElement; de.className += ' kmh-js';
-  var F = {"untangle": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap", "blueprint": "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap", "nakshi": "https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500&family=Alegreya:ital,wght@0,400..700;1,400..600&display=swap", "terminal": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap", "archive": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600&family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap", "cyberpunk": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@500;600&display=swap", "living": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap", "week": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"}, K = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], M = {"sun": "untangle", "mon": "blueprint", "tue": "nakshi", "wed": "terminal", "thu": "archive", "fri": "cyberpunk", "sat": "living"}, q = '';
+  var F = {"untangle": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap", "blueprint": "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap", "nakshi": "https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500&family=Alegreya:ital,wght@0,400..700;1,400..600&display=swap", "terminal": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap", "archive": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600&family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap", "cyberpunk": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@500;600&display=swap", "living": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap", "week": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"}, K = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], M = {"sun": "untangle", "mon": "blueprint", "tue": "nakshi", "wed": "terminal", "thu": "archive", "fri": "cyberpunk", "sat": "living"}, q = '';
   try { q = (new URLSearchParams(location.search).get('day') || '').toLowerCase(); } catch (e) {}
   if (q === 'all') q = 'week';
   var full = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(q); if (full >= 0) q = K[full];
@@ -177,293 +177,428 @@ DbtdWRMNUvNquOeL3f9VXZHmAl1ieHlYTZ1oUtVkg5Lx9q8ATao1OnfIW0sXjuIM/3auuoaYWz1Sq6Pv
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{meta.title}}</title>
 <meta name="description" content="{{meta.description}}">
-<\!-- Updated by Mobashyer D-17-11-26: canonical, social and structured data now come from one shared block, added to every design -->
-<meta name="theme-color" content="#0E171C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E171C'/%3E%3Cpath d='M16 3v7c0 5 8 3 8 8s-12 5-12 0 8-4 4 3v8' fill='none' stroke='%238FA4FF' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<\!-- Sunday · Untangle, redesigned as an editorial engineering journal. Updated by Mobashyer D-18-11-26.
+     Same shared content as every other day; canonical, social and structured data are added by the shared runtime. -->
+<meta name="theme-color" content="#0B0D10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D10'/%3E%3Cpath d='M7 24V8l9 10 9-10v16' fill='none' stroke='%23E5483B' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: dark;
-  --ground: #0E171C;
-  --ground-2: #17252B;
-  --ink: #E9EEEC;
-  --muted: #93A4A8;
-  --rule: #25373E;
-  --thread: #8FA4FF;
-  --tone: #AEBBFF;     /* light tone of the two-colour photo */
-  --side: max(0px, calc((100vw - 1240px) / 2)); /* Added by Mobashyer D-17-11-26 empty space either side of the centred page */
-  --gx: calc(var(--side) + 56px); /* where the thread runs */
-  --pr: calc(var(--side) + clamp(20px, 5vw, 72px)); /* right padding, mirrors the left */
-  --off: 52px;         /* content distance from the thread */
-  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --text: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --bg: #0B0D10;
+  --bg-2: #101318;
+  --panel: #13171D;
+  --panel-2: #181D24;
+  --line: rgba(237, 232, 224, 0.11);
+  --line-2: rgba(237, 232, 224, 0.22);
+  --ink: #EDE8E0;
+  --soft: #C9C4BB;
+  --muted: #9A958D;
+  --dim: #8A857E;   /* readable on the dark ground (4.5:1+) */
+  --red: #E5483B;
+  --red-2: #FF6B5D;
+  --red-wash: rgba(229, 72, 59, 0.12);
+  --serif: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --pad: clamp(20px, 4.4vw, 56px);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { font-size: 18px; } /* Added by Mobashyer D-17-11-26 keeps the type scale the approved design was built and reviewed at */
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body {
-  margin: 0;
-  background: var(--ground);
-  color: var(--ink);
-  font-family: var(--text);
-  font-size: 1.125rem;
-  line-height: 1.62;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-/* concrete grain over everything */
-body::after {
-  content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.16; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-::selection { background: var(--thread); color: var(--ground); }
-a { color: inherit; text-decoration-color: var(--thread); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
-a:hover { color: var(--thread); }
-:focus-visible { outline: 2px solid var(--thread); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: -0.02em; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.65 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+::selection { background: var(--red); color: #fff; }
+:focus-visible { outline: 2px solid var(--red-2); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 p { margin: 0 0 1em; }
-.wrap { position: relative; z-index: 2; padding-left: calc(var(--gx) + var(--off)); padding-right: var(--pr); } /* Updated by Mobashyer D-17-11-26 centre the page; the thread moves with the content */
-.line { fill: none; stroke: var(--thread); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.glow { fill: none; stroke: var(--thread); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.16; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--pad); position: relative; }
+.mono { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.kicker { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin: 0 0 18px; }
+.kicker::after { content: ""; width: 64px; height: 1px; background: var(--red); opacity: 0.7; }
 
-/* top bar */
-.bar {
-  position: sticky; top: 0; z-index: 20;
-  display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  padding: 14px var(--pr) 14px calc(var(--gx) + var(--off));
-  background: color-mix(in srgb, var(--ground) 82%, transparent);
-  backdrop-filter: blur(10px);
-  font-family: var(--display); font-size: 0.95rem;
+/* ---------- masthead ---------- */
+.mast { position: sticky; top: 0; z-index: 40; background: rgba(11, 13, 16, 0.84); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.mast .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 62px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand svg { width: 30px; height: 24px; flex: none; }
+.brand b { font: 500 1.08rem/1 var(--serif); letter-spacing: 0.01em; }
+.mast nav { display: flex; gap: clamp(14px, 2.2vw, 30px); font-size: 0.86rem; color: var(--soft); }
+.mast nav a { text-decoration: none; position: relative; padding: 6px 0; }
+.mast nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease); }
+.mast nav a:hover { color: var(--ink); }
+.mast nav a:hover::after { transform: scaleX(1); }
+.edition { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+.edition i { color: var(--red); font-style: normal; }
+
+/* ---------- reading progress thread in the margin ---------- */
+#gutter { position: fixed; left: max(12px, calc((100vw - 1240px) / 2 - 22px)); top: 62px; bottom: 0; width: 1px; z-index: 5; background: var(--line); pointer-events: none; }
+#gutter i { position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: var(--red); transform-origin: top; transform: scaleY(0); }
+#gutter b { position: absolute; left: -3px; width: 7px; height: 7px; border-radius: 50%; background: var(--red); top: 0; transform: translateY(-3px); box-shadow: 0 0 0 4px rgba(229, 72, 59, 0.18); }
+
+/* ---------- hero ---------- */
+.hero { position: relative; padding: clamp(40px, 6vw, 84px) 0 0; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 6vw, 5.4rem); line-height: 1.02; letter-spacing: -0.015em; margin: 0 0 28px; }
+.hero h1 span { display: block; white-space: nowrap; }
+.hero h1 span:nth-child(2) { font-style: italic; color: var(--red); font-weight: 400; }
+.hero h1 span:nth-child(3) { color: var(--soft); }
+.lede { max-width: 34rem; font-size: 1.12rem; color: var(--soft); margin-bottom: 30px; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px; background: #C8372B; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.94rem; transition: background 0.25s, transform 0.25s var(--ease); }
+.btn:hover { background: #B32F24; transform: translateY(-1px); }
+.btn svg, .arrow-link svg { width: 14px; height: 14px; transition: transform 0.3s var(--ease); }
+.btn:hover svg, .arrow-link:hover svg { transform: translateX(3px); }
+.hero .links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
+.hero .links a { text-decoration: none; color: var(--soft); border-bottom: 1px solid var(--line-2); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+.hero .links a:hover { color: var(--ink); border-color: var(--red); }
+
+.plate { position: relative; justify-self: end; width: min(100%, 470px); aspect-ratio: 4 / 5; }
+.plate .block { position: absolute; left: 14%; top: 10%; width: 52%; height: 70%; background: var(--red); }
+.plate .grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; -webkit-mask-image: radial-gradient(circle at 55% 45%, #000 30%, transparent 75%); mask-image: radial-gradient(circle at 55% 45%, #000 30%, transparent 75%); }
+.plate svg.ring { position: absolute; inset: -6% -10% auto auto; width: 92%; height: auto; overflow: visible; }
+.plate svg.ring circle { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.plate svg.ring line { stroke: var(--line-2); stroke-width: 1; }
+.plate figure { position: absolute; left: 24%; top: 4%; width: 70%; height: 86%; margin: 0; overflow: hidden; }
+.plate img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 18%; display: block; filter: grayscale(0.25) contrast(1.05) brightness(0.95); }
+.plate figcaption { position: absolute; left: 24%; bottom: 0; transform: translateY(10px); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.plate figcaption b { color: var(--red); font-weight: 500; }
+.topics { position: absolute; right: -2px; bottom: 16%; list-style: none; margin: 0; padding: 0 0 12px; text-align: right; border-bottom: 1px solid var(--line-2); font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--soft); line-height: 2.1; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
+
+/* the knot, pulled straight as you read */
+.knotfig { margin-top: clamp(30px, 5vw, 60px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.knotfig .wrap { display: grid; grid-template-columns: 200px minmax(0, 1fr) 200px; align-items: center; gap: 20px; min-height: 116px; }
+.knotfig svg { width: 100%; height: 110px; overflow: visible; }
+.knotfig path { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.knotfig circle { fill: var(--red); }
+.knotfig .cap { color: var(--muted); }
+.knotfig .cap b { color: var(--ink); font-weight: 500; }
+.knotfig .tension { text-align: right; color: var(--muted); }
+.knotfig .tension output { color: var(--red); font-variant-numeric: tabular-nums; }
+
+/* ---------- sections ---------- */
+section { padding: clamp(64px, 9vw, 120px) 0 0; }
+.shead { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(20px, 4vw, 60px); align-items: end; padding-bottom: 28px; margin-bottom: clamp(30px, 4vw, 48px); border-bottom: 1px solid var(--line); }
+.shead h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.06; letter-spacing: -0.01em; }
+.shead .intro { color: var(--muted); font-size: 1.02rem; max-width: 40rem; margin: 0; }
+.no { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; color: var(--red); margin-bottom: 14px; }
+
+/* ---------- career ---------- */
+.tl { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+.tl::before, .tl .fill { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 1px; background: var(--line-2); }
+.tl .fill { background: var(--red); transform-origin: left; transform: scaleX(var(--p, 0)); transition: transform 1.4s var(--ease); }
+.ms { position: relative; padding: 46px 28px 8px 0; }
+.ms + .ms { padding-left: 28px; border-left: 1px solid var(--line); }
+.ms .dot { position: absolute; top: 4px; left: 0; width: 15px; height: 15px; border: 1.5px solid var(--red); background: var(--bg); }
+.ms + .ms .dot { left: 28px; }
+.ms:nth-child(2) .dot { border-radius: 50%; }
+.ms:nth-child(3) .dot { background: var(--red); }
+.ms:nth-child(4) .dot { border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px var(--red-wash); }
+.ms:nth-child(5) .dot { transform: rotate(45deg); }
+.ms .num { position: absolute; top: 2px; right: 20px; color: var(--dim); }
+.ms time { display: block; font-family: var(--mono); font-size: 0.9rem; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 10px; }
+.ms .state { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 999px; font-size: 0.62rem; color: var(--bg); background: var(--red); vertical-align: 2px; }
+.ms h3 { font-family: var(--serif); font-size: 1.42rem; line-height: 1.18; margin-bottom: 8px; }
+.ms .chap { font-family: var(--serif); font-style: italic; color: var(--red-2); margin-bottom: 12px; }
+.ms p { color: var(--soft); font-size: 0.95rem; }
+.ms .scope { color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 14px; }
+.ms .scope b { color: var(--dim); font-weight: 500; margin-right: 6px; }
+
+/* ---------- case files ---------- */
+.cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.case { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 26px 26px 22px; transition: border-color 0.3s, transform 0.4s var(--ease), background 0.3s; }
+.case:hover { border-color: var(--line-2); transform: translateY(-2px); background: var(--panel-2); }
+.case:first-child, .case:nth-child(7) { grid-column: span 2; }
+.case::before { content: ""; position: absolute; left: -1px; top: 26px; width: 3px; height: 34px; background: var(--red); }
+.case .top { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+.case .letter { font: 400 2.6rem/0.9 var(--serif); color: var(--red); font-style: italic; }
+.case .kind { color: var(--muted); }
+.case .badge { margin-left: auto; padding: 3px 9px; border: 1px solid var(--red); color: var(--red-2); border-radius: 999px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.case h3 { font-family: var(--serif); font-size: clamp(1.28rem, 1.9vw, 1.6rem); line-height: 1.22; margin-bottom: 8px; }
+.case:first-child h3, .case:nth-child(7) h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); max-width: 30ch; }
+.case .what { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em; margin-bottom: 16px; }
+.case svg.knot { display: block; width: 100%; height: 46px; overflow: visible; margin: 2px 0 14px; }
+.case svg.knot path { fill: none; stroke: var(--soft); stroke-width: 1.2; stroke-linecap: round; }
+.case svg.knot circle { fill: var(--red); }
+.flow { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--mono); font-size: 0.7rem; color: var(--soft); }
+.flow li { display: flex; align-items: center; gap: 6px; padding: 4px 9px; border: 1px solid var(--line-2); border-radius: 3px; background: rgba(255, 255, 255, 0.015); }
+.flow li:not(:last-child)::after { content: "→"; color: var(--red); margin-left: 2px; margin-right: -2px; }
+.outcome { border-left: 2px solid var(--red); padding: 4px 0 4px 16px; margin: 0 0 16px; }
+.outcome span { display: block; color: var(--red); margin-bottom: 4px; }
+.outcome p { margin: 0; font-family: var(--serif); font-size: 1.08rem; line-height: 1.45; color: var(--ink); }
+.case .open { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); padding: 6px 0; }
+.case .open:hover { color: var(--ink); }
+.case .open:focus-visible { outline: 2px solid var(--red-2); outline-offset: 4px; }
+.case .open i { display: inline-grid; place-items: center; width: 20px; height: 20px; border: 1px solid var(--line-2); border-radius: 50%; font-style: normal; transition: transform 0.35s var(--ease), border-color 0.3s; }
+.case.on .open i { transform: rotate(45deg); border-color: var(--red); }
+.case .panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s var(--ease); }
+.case.on .panel { grid-template-rows: 1fr; }
+.case .panel > div { overflow: hidden; min-height: 0; }
+.steps { list-style: none; counter-reset: s; margin: 14px 0 4px; padding: 16px 0 0; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.case:first-child .steps, .case:nth-child(7) .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.steps li { counter-increment: s; }
+.steps .lab { display: block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.steps .lab::before { content: "0" counter(s) "  "; white-space: pre; }
+.steps li.decision .lab { color: var(--red); }
+.steps p { margin: 0; color: var(--soft); font-size: 0.95rem; }
+.steps li.decision p { color: var(--ink); }
+
+/* ---------- what's next ---------- */
+.next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-2); }
+.next > div { padding: 26px 28px 8px 0; }
+.next > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
+.next h3 { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 16px; }
+.next h3::before { content: attr(data-n); display: block; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--red); margin-bottom: 8px; }
+.chips { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font-family: var(--mono); font-size: 0.74rem; padding: 4px 10px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--soft); transition: border-color 0.2s, color 0.2s; }
+.chips li:hover { border-color: var(--red); color: var(--ink); }
+.next p { color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- apps in use ---------- */
+.apps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; }
+.app { margin: 0; }
+.vid { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 4px; border: 1px solid var(--line); background: #e9eef3; }
+.vid video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.app figcaption { margin-top: 14px; }
+.app figcaption b { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.22rem; }
+.app .bank { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-2); }
+.app figcaption p { margin: 6px 0 0; color: var(--muted); font-size: 0.94rem; }
+
+/* ---------- skills: three areas ---------- */
+.areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-2); }
+.area { padding: 28px 28px 0 0; }
+.area + .area { padding-left: 28px; border-left: 1px solid var(--line); }
+.area > h3 { font-family: var(--serif); font-size: 1.9rem; line-height: 1.1; margin-bottom: 6px; }
+.area > .lead { color: var(--muted); margin-bottom: 22px; }
+.sg { margin-bottom: 26px; }
+.sg h4 { font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.sg ol { list-style: none; counter-reset: k; margin: 0; padding: 0; }
+.sg li { counter-increment: k; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--soft); }
+.sg li::before { content: counter(k, decimal-leading-zero); font-family: var(--mono); font-size: 0.68rem; color: var(--dim); padding-top: 3px; }
+.sg li span { display: inline-block; }
+.sg li span::first-letter { text-transform: uppercase; }
+.pool[hidden] { display: none; }
+
+/* ---------- education ---------- */
+.edu { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 60px); }
+.quals { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.quals li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.quals .yr { font: 400 2rem/1 var(--serif); color: var(--red); font-style: italic; display: block; margin-bottom: 8px; }
+.quals h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 2px; }
+.quals p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+.research { display: grid; gap: 22px; }
+.paper { position: relative; padding: 26px 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
+.paper .meta { color: var(--muted); margin-bottom: 10px; }
+.paper .meta b { color: var(--red); font-weight: 500; }
+.paper h3 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(1.3rem, 2.1vw, 1.75rem); line-height: 1.28; margin-bottom: 12px; }
+.paper .sum { color: var(--soft); margin-bottom: 12px; }
+.abs summary { cursor: pointer; width: fit-content; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); list-style: none; }
+.abs summary::-webkit-details-marker { display: none; }
+.abs summary::before { content: "+ "; color: var(--red); }
+.abs[open] summary::before { content: "− "; }
+.abs summary:hover { color: var(--ink); }
+.abs p { margin: 12px 0 0; color: var(--soft); font-size: 0.95rem; line-height: 1.7; max-width: 62rem; }
+.paper .proj { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); color: var(--soft); font-size: 0.94rem; }
+.paper .proj span { color: var(--dim); margin-right: 8px; }
+.certs { margin-top: clamp(30px, 4vw, 48px); border-top: 1px solid var(--line-2); }
+.certs h3 { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); font-weight: 500; padding: 18px 0 6px; }
+.cert { display: grid; grid-template-columns: 9rem minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.cert .when { font-family: var(--mono); font-size: 0.82rem; color: var(--ink); }
+.cert p { margin: 0; color: var(--soft); }
+.cert p b { color: var(--ink); font-weight: 500; }
+.arrow-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--red); padding-bottom: 2px; white-space: nowrap; }
+.arrow-link:hover { color: var(--red-2); }
+
+/* ---------- contact ---------- */
+#contact { padding-bottom: clamp(80px, 10vw, 140px); }
+.close { position: relative; display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: clamp(24px, 4vw, 60px); align-items: end; padding-top: clamp(30px, 5vw, 60px); border-top: 1px solid var(--line-2); }
+.close h2 { font-family: var(--serif); font-size: clamp(2.6rem, 7.4vw, 6.4rem); line-height: 0.98; letter-spacing: -0.02em; margin-bottom: 28px; }
+.close h2 em { color: var(--red); font-weight: 400; }
+.mail { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.8vw, 2.1rem); text-decoration: none; overflow-wrap: anywhere; border-bottom: 1px solid var(--red); transition: color 0.2s; }
+.mail:hover { color: var(--red-2); }
+.close .links { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.close .links a { display: inline-flex; align-items: center; gap: 10px; padding: 11px 18px; border: 1px solid var(--line-2); border-radius: 999px; text-decoration: none; font-size: 0.92rem; transition: border-color 0.2s, background 0.2s; }
+.close .links a:hover { border-color: var(--red); background: var(--red-wash); }
+.close .links a::after { content: "↗"; color: var(--red); }
+.close .links li:last-child a { background: #C8372B; border-color: #C8372B; color: #fff; }
+.close .links li:last-child a::after { content: "↓"; color: #fff; }
+.close .links li:last-child a:hover { background: #B32F24; }
+.portrait { position: relative; margin: 0; justify-self: end; width: min(100%, 300px); }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 12%; filter: grayscale(1) contrast(1.06); border-radius: 2px; }
+.portrait::before { content: ""; position: absolute; left: -14px; top: 14px; width: 100%; height: 100%; border: 1px solid var(--red); z-index: -1; }
+.portrait figcaption { margin-top: 10px; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding: 26px 0 70px; color: var(--dim); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- reveal on scroll ---------- */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.js .rv.in { opacity: 1; transform: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+  .mast nav a.opt { display: none; }
+  .tl { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+  .tl::before, .tl .fill { display: none; }
+  .ms:nth-child(4) { padding-left: 0; border-left: 0; }   /* first milestone of the second row (child 1 is the rail) */
+  .ms:nth-child(4) .dot { left: 0; }
+  .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case:nth-child(7) { grid-column: auto; }
+  .case:nth-child(7) .steps { grid-template-columns: 1fr; }
+  .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #gutter { display: none; }
 }
-.bar .name { font-weight: 600; text-decoration: none; }
-.bar nav { display: flex; gap: clamp(14px, 2.4vw, 30px); }
-.bar nav a { text-decoration: none; color: var(--muted); }
-.bar nav a:hover { color: var(--ink); }
-
-/* hero */
-.hero { position: relative; min-height: calc(100vh - 52px); min-height: calc(100svh - 52px); display: flex; align-items: center; overflow: hidden; }
-.figure {
-  position: absolute; z-index: 0; right: calc(var(--side) + clamp(24px, 9vw, 150px)); /* Updated by Mobashyer D-17-11-26 photo follows the centred page */ bottom: 0; height: 94%; aspect-ratio: 542 / 1570;
-  isolation: isolate;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
-          mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
-}
-.figure img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 94%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 94%, transparent); filter: grayscale(1) contrast(1.12) brightness(1.08); }
-.figure::before, .figure::after { content: ""; position: absolute; inset: 0; }
-.figure::before { background: var(--tone); mix-blend-mode: multiply; z-index: 1; }
-.figure::after { background: var(--ground); mix-blend-mode: lighten; z-index: 2; }
-#knot { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: visible; }
-.hero .wrap { width: 100%; padding-top: 48px; padding-bottom: 96px; }
-.hero h1 { font-size: clamp(1.6rem, 5.4vw, 4.8rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; max-width: min(680px, 56vw); } /* Updated by Mobashyer D-17-11-26 stop the headline before the photo */ /* Updated by Mobashyer D-17-11-26 sized for the haiku's longer middle line */
-.hero h1 span { display: block; white-space: nowrap; } /* Updated by Mobashyer D-17-11-26 each haiku line is fixed */
-.hero .who { font-family: var(--display); font-size: 1.05rem; color: var(--muted); margin-bottom: 1.4rem; }
-.hero .lede { max-width: 34rem; margin-top: 1.8rem; font-size: 1.2rem; }
-.hint { position: absolute; left: calc(var(--gx) + 14px); bottom: 22px; z-index: 2; margin: 0; font-family: var(--display); font-size: 0.85rem; color: var(--muted); }
-
-/* the thread through the page */
-main { position: relative; }
-#thread { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: visible; }
-section { padding: clamp(64px, 9vw, 120px) 0; }
-h2 { position: relative; font-size: clamp(2rem, 4.6vw, 3.6rem); max-width: 18ch; margin-bottom: 0.5em; letter-spacing: -0.03em; }
-.intro { max-width: 38rem; color: var(--muted); margin-bottom: 3rem; }
-
-/* career */
-.stage { display: grid; grid-template-columns: 9.5rem 1fr; gap: 8px 40px; padding: 30px 0; border-top: 1px solid var(--rule); }
-.stage time { font-family: var(--display); color: var(--muted); padding-top: 0.25rem; }
-.stage h3 { font-size: 1.6rem; }
-.stage .role { font-family: var(--display); color: var(--muted); margin: 0.35rem 0 0.9rem; }
-.stage p { max-width: 40rem; margin-bottom: 0; }
-.scope { display: flex; align-items: center; gap: 12px; margin-top: 1.1rem; font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
-.scope i { display: block; height: 5px; border-radius: 3px; background: var(--thread); flex: none; }
-.s1 i { width: 7%; } .s2 i { width: 22%; } .s3 i { width: 44%; } .s4 i { width: 72%; }
-
-/* case files */
-.case { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 20px 56px; padding: 40px 0; border-top: 1px solid var(--rule); }
-.case .kind { font-family: var(--display); font-size: 0.95rem; color: var(--thread); margin-bottom: 0.7rem; }
-.case h3 { font-size: clamp(1.45rem, 2.6vw, 2.05rem); font-weight: 600; }
-.toggle { all: unset; cursor: pointer; display: inline; }
-.toggle:hover { color: var(--thread); }
-.toggle:focus-visible { outline: 2px solid var(--thread); outline-offset: 4px; border-radius: 2px; }
-.case .what { font-family: var(--display); color: var(--muted); font-size: 0.95rem; margin: 0.9rem 0 0; }
-.tangle, .cue { display: none; }
-.js .tangle { display: block; width: 100%; height: 104px; overflow: visible; cursor: pointer; transition: height 0.55s ease; }
-.js .case.open .tangle { height: 26px; }
-.tangle .dot { fill: var(--thread); }
-.tangle .pulse { fill: none; stroke: var(--thread); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: pull 1.8s ease-out infinite; }
-.case.open .pulse { animation: none; opacity: 0; }
-@keyframes pull { from { transform: scale(1); opacity: 0.9; } to { transform: scale(3.4); opacity: 0; } }
-.js .cue { display: block; margin: 0; text-align: right; font-family: var(--display); font-size: 0.9rem; color: var(--thread); cursor: pointer; }
-.js .cue:hover { color: var(--ink); }
-.js .panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.55s ease; }
-.js .case.open .panel { grid-template-rows: 1fr; }
-.js .inner { overflow: hidden; min-height: 0; visibility: hidden; transition: visibility 0s 0.55s; }
-.js .case.open .inner { visibility: visible; transition-delay: 0s; }
-.case dl { margin: 0; padding: 1.2rem 0 0.4rem; }
-.case dt { font-family: var(--display); font-weight: 600; font-size: 0.95rem; margin-top: 1.1rem; color: var(--muted); }
-.case dt:first-child { margin-top: 0; }
-.case dd { margin: 0.15rem 0 0; max-width: 36rem; }
-.case dd.result { border-left: 3px solid var(--thread); padding-left: 14px; margin-top: 0.4rem; font-size: 1.2rem; }
-
-/* next */
-.pair { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; border-top: 1px solid var(--rule); padding-top: 32px; }
-.pair h3 { font-size: 1.25rem; margin-bottom: 0.8rem; }
-.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--display); font-size: 0.95rem; }
-.tags li { padding: 5px 12px; border-radius: 999px; background: var(--ground-2); border: 1px solid var(--rule); }
-.pair p { color: var(--muted); font-size: 1rem; margin: 1rem 0 0; max-width: 30rem; }
-
-/* tools + education */
-.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px; }
-.cols h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
-.cols p { font-size: 1rem; color: var(--muted); margin: 0; }
-.edu { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
-.edu h3 { font-size: 1.25rem; }
-.edu p { margin: 0.4rem 0 0; color: var(--muted); font-size: 1rem; }
-.edu em { color: var(--ink); }
-
-/* contact */
-#contact { padding-bottom: 120px; }
-#contact h2 { max-width: 16ch; }
-.contact { display: grid; grid-template-columns: auto auto; gap: 40px; align-items: center; width: fit-content; max-width: 100%; margin-top: 4.5rem; }
-.photo { width: 228px; height: 280px; border-radius: 10px; overflow: hidden; background: var(--ground-2); }
-.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.contact .mail { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 3.1vw, 2.2rem); letter-spacing: -0.02em; overflow-wrap: anywhere; }
-.links { list-style: none; padding: 0; margin: 1.3rem 0 0; display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: var(--display); }
-footer { position: relative; z-index: 2; padding: 0 var(--pr) 40px calc(var(--gx) + var(--off)); font-family: var(--display); font-size: 0.85rem; color: var(--muted); }
-
 @media (max-width: 820px) {
-  :root { --gx: 20px; --off: 24px; --pr: clamp(20px, 5vw, 72px); }
-  .hero h1 { max-width: none; } /* Added by Mobashyer D-17-11-26 full width on phones */
-  body { font-size: 1.0625rem; }
-  .bar nav a.opt { display: none; }
-  .hero { display: block; min-height: 0; padding-bottom: 0; }
-  .hero .wrap { padding-top: 40px; padding-bottom: 8px; }
-  .figure { position: relative; right: auto; height: 440px; margin: 0 9vw 0 auto; }
-  .hint { display: none; }
-  .stage, .case, .pair, .cols, .edu { grid-template-columns: 1fr; }
-  .case { gap: 20px; }
-  .contact { grid-template-columns: 1fr; gap: 24px; margin-top: 4.5rem; margin-left: 10px; max-width: calc(100% - 22px); }
-  .photo { width: 168px; height: 206px; }
-  .contact .mail { font-size: 1.08rem; letter-spacing: -0.01em; }
+  .hero .wrap, .shead, .edu, .close { grid-template-columns: minmax(0, 1fr); }
+  .plate { justify-self: center; width: min(100%, 420px); }
+  .knotfig .wrap { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-top: 14px; padding-bottom: 14px; }
+  .knotfig .tension { text-align: left; }
+  .tl { grid-template-columns: minmax(0, 1fr); }
+  .ms, .ms + .ms { padding: 34px 0 16px 34px; border-left: 1px solid var(--line-2); }
+  .ms .dot, .ms + .ms .dot { left: -8px; top: 36px; }
+  .ms .num { right: 0; top: 36px; }
+  .cases, .apps-grid, .next, .areas { grid-template-columns: minmax(0, 1fr); }
+  .case:first-child { grid-column: auto; }
+  .case:first-child .steps { grid-template-columns: 1fr; }
+  .next > div, .next > div + div, .area, .area + .area { padding: 24px 0 4px; border-left: 0; border-top: 1px solid var(--line); }
+  .portrait { justify-self: start; width: min(70%, 260px); margin-left: 14px; }
+  .cert { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
+@media (max-width: 560px) {
+  .edition { display: none; }
+  .mast nav { gap: 14px; font-size: 0.82rem; }
+  .topics { display: none; }
+  .case { padding: 22px 18px 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hint { display: none; }
-  .js .tangle, .js .panel { transition: none; }
-  .tangle .pulse { animation: none; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .tl .fill, .case .panel, .case, .btn { transition: none; }
 }
-
-/* Added by Mobashyer D-17-11-26: thesis, summary, abstract and side project under each degree */
-.edu .thesis { color: var(--ink, inherit); margin-top: 0.7rem !important; }
-.edu .tl { font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--thread); margin-right: 6px; font-style: normal; }
-.edu .tsum { margin-top: 0.35rem !important; }
-.edu .abs { margin-top: 0.6rem; }
-.edu .abs summary { cursor: pointer; color: var(--thread); font-size: 0.92rem; width: fit-content; }
-.edu .abs summary:hover { text-decoration: underline; }
-.edu .abs p { margin-top: 0.6rem !important; font-size: 0.95rem; line-height: 1.6; }
-.edu .proj { margin-top: 0.8rem !important; }
-/* Added by Mobashyer D-18-11-26: certifications, and the payment apps in use (videos shown with the banks’ permission) */
-.apps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.app { margin: 0; }
-.vid { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #e9eef3; }
-.vid video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.app figcaption { margin-top: 12px; }
-.app figcaption b { display: block; }
-.app figcaption p { margin: 4px 0 0; }
-@media (max-width: 900px) { .apps-grid { grid-template-columns: minmax(0, 1fr); max-width: 640px; } }
-.vid { border-radius: 10px; box-shadow: 0 0 0 1px var(--rule); }
-.app figcaption b { font-family: var(--display); font-size: 1.2rem; }
-.app .bank { font-family: var(--display); color: var(--thread); font-size: 0.92rem; }
-.app figcaption p { color: var(--muted); font-size: 0.98rem; }
-.edu .cert a { color: var(--thread); }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
 
-<header class="bar">
-  <a class="name" href="#top">{{identity.shortName}}</a>
-  <nav aria-label="Sections">
-    <a href="#career" class="opt">Career</a>
-    <a href="#cases">Case files</a>
-    <a href="#next" class="opt">{{labels.next}}</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="{{identity.name}}, back to top">
+      <svg viewBox="0 0 30 24" aria-hidden="true"><path d="M2 22V2l13 13L28 2v20" fill="none" stroke="#E5483B" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      <b>{{identity.shortName}}</b>
+    </a>
+    <nav aria-label="Sections">
+      <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
+      <a href="#career">Career</a>
+      <a href="#cases">Case files</a>
+      <a href="#next">{{labels.next}}</a>
+      <a href="#tools">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="edition" aria-hidden="true"><i>●</i> Sunday edition</span>
+  </div>
 </header>
 
+<div id="gutter" aria-hidden="true"><i></i><b></b></div>
+
 <div class="hero" id="top">
-  <svg id="knot" aria-hidden="true"><path class="glow"/><path class="line"/></svg>
   <div class="wrap">
-    <p class="who">{{identity.name}}, {{identity.city}}</p>
-    <\!-- Updated by Mobashyer D-17-11-26 headline: revised haiku wording, three fixed lines -->
-    <h1>{{#hero.haiku}}<span>{{.}}</span> {{/hero.haiku}}</h1>
-    <p class="lede">{{hero.intro}}</p>
+    <div>
+      <p class="kicker">{{identity.name}}, {{identity.city}}</p>
+      <h1>{{#hero.haiku}}<span>{{.}}</span> {{/hero.haiku}}</h1>
+      <p class="lede">{{hero.intro}}</p>
+      <div class="cta">
+        <a class="btn" href="#cases">Read the case files <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <ul class="links">
+{{#links}}          <li><a href="{{url}}">{{label}}</a></li>
+{{/links}}        </ul>
+      </div>
+    </div>
+    <div class="plate">
+      <div class="grid"></div>
+      <div class="block"></div>
+      <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190"/><line x1="200" y1="0" x2="200" y2="400"/><line x1="0" y1="200" x2="400" y2="200"/></svg>
+      <figure><img src="data:image/webp;base64,%%HEAD%%" width="520" height="638" alt="{{photos.headAlt}}"></figure>
+      <ul class="topics" aria-label="Areas of work">{{#skills}}<li>{{group}}</li>{{/skills}}</ul>
+    </div>
   </div>
-  <div class="figure"><img src="data:image/webp;base64,%%HERO%%" width="449" height="1300" alt="{{photos.heroAlt}}"></div>
-  <p class="hint">Scroll to pull the thread</p>
+  <div class="knotfig" aria-hidden="true">
+    <div class="wrap">
+      <p class="mono cap"><b>Fig. 1</b> · The knot</p>
+      <svg id="knot" viewBox="0 0 800 110" preserveAspectRatio="none"><path/><circle r="4.5"/></svg>
+      <p class="mono tension">Tension <output id="tension">100%</output></p>
+    </div>
+  </div>
 </div>
 
 <main>
-<svg id="thread" aria-hidden="true"><path class="glow"/><path class="line"/></svg>
 
 <section id="career">
   <div class="wrap">
-    <h2>{{sections.career.title}}</h2>
-    <p class="intro">{{sections.career.intro}}</p>
-{{#experience}}
-    <div class="stage">
-      <time datetime="{{datetime}}">{{date}}</time>
-      <div>
-        <h3>{{title}}</h3>
-        <p class="role">{{role}}</p>
-        <p>{{summary}}</p>
-        <div class="scope s{{num}}"><i></i>{{scope}}</div>
-      </div>
+    <div class="shead rv">
+      <div><span class="no">§ 01 · Career</span><h2>{{sections.career.title}}</h2></div>
+      <p class="intro">{{sections.career.intro}}</p>
     </div>
-{{/experience}}
+    <ol class="tl" id="tl">
+      <li class="fill" role="presentation" aria-hidden="true"></li>
+{{#experience}}      <li class="ms rv" data-when="{{datetime}}">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="num mono" aria-hidden="true">0{{num}}</span>
+        <time datetime="{{datetime}}">{{date}}</time>
+        <h3>{{role}}</h3>
+        <p class="chap">{{title}}</p>
+        <p>{{summary}}</p>
+        <p class="scope mono"><b>Scope</b>{{scope}}</p>
+      </li>
+{{/experience}}    </ol>
   </div>
 </section>
 
 <section id="cases">
   <div class="wrap">
-    <h2>{{sections.cases.title}}</h2>
-    <p class="intro">{{sections.cases.intro}}</p>
-{{#projects}}
-    <article class="case">
-      <div>
-        <p class="kind">{{kind}}</p>
-        <h3><button class="toggle" aria-expanded="true" aria-controls="file-{{num}}">{{headline}}</button></h3>
+    <div class="shead rv">
+      <div><span class="no">§ 02 · Case files</span><h2>{{sections.cases.title}}</h2></div>
+      <p class="intro">{{sections.cases.intro}}</p>
+    </div>
+    <div class="cases">
+{{#projects}}      <article class="case rv" data-n="{{num}}">
+        <div class="top"><span class="letter" aria-hidden="true">{{letter}}</span><span class="kind mono">Case {{letter}} · {{kind}}</span>{{#status}}<span class="badge">{{status}}</span>{{/status}}</div>
+        <h3>{{headline}}</h3>
         <p class="what">{{name}}</p>
-      </div>
-      <div>
-        <svg class="tangle" aria-hidden="true"><path class="glow"/><path class="line"/><circle class="pulse" r="5"/><circle class="dot" r="5"/></svg>
-        <p class="cue" aria-hidden="true">Click to untangle</p>
-        <div class="panel" id="file-{{num}}"><div class="inner"><dl>
-          <dt>The problem</dt>
-          <dd>{{problem}}</dd>
-{{#options}}          <dt>The two options</dt>
-          <dd>{{options}}</dd>
-{{/options}}          <dt>The call</dt>
-          <dd>{{call}}</dd>
-          <dt>The result</dt>
-          <dd class="result">{{result}}</dd>
-        </dl></div></div>
-      </div>
-    </article>
-{{/projects}}
+        <svg class="knot" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path/><circle r="3.5"/></svg>
+        <ol class="flow" aria-label="Components">{{#parts}}<li>{{.}}</li>{{/parts}}</ol>
+        <div class="outcome"><span class="mono">{{#status}}Status{{/status}}{{^status}}Outcome{{/status}}</span><p>{{result}}</p></div>
+        <button type="button" class="open" aria-expanded="false" aria-controls="case-{{num}}"><i aria-hidden="true">+</i><span>Read the case</span></button>
+        <div class="panel" id="case-{{num}}"><div>
+          <ol class="steps">
+            <li><span class="lab">Problem</span><p>{{problem}}</p></li>
+{{#options}}            <li><span class="lab">Options</span><p>{{options}}</p></li>
+{{/options}}            <li class="decision"><span class="lab">Decision</span><p>{{call}}</p></li>
+          </ol>
+        </div></div>
+      </article>
+{{/projects}}    </div>
   </div>
 </section>
 
 <section id="next">
   <div class="wrap">
-    <h2>{{sections.next.title}}</h2>
-    <p class="intro">{{sections.next.intro}}</p>
-    <div class="pair">
+    <div class="shead rv">
+      <div><span class="no">§ 03 · {{labels.next}}</span><h2>{{sections.next.title}}</h2></div>
+      <p class="intro">{{sections.next.intro}}</p>
+    </div>
+    <div class="next rv">
 {{#next}}      <div>
-        <h3>{{group}}</h3>
-        <ul class="tags">
-          {{#items}}<li>{{.}}</li>{{/items}}
-        </ul>
+        <h3 data-n="0{{num}}">{{group}}</h3>
+        <ul class="chips">{{#items}}<li>{{.}}</li>{{/items}}</ul>
         <p>{{note}}</p>
       </div>
 {{/next}}    </div>
@@ -472,28 +607,53 @@ footer { position: relative; z-index: 2; padding: 0 var(--pr) 40px calc(var(--gx
 
 <section id="tools">
   <div class="wrap">
-    <h2>{{sections.skills.title}}</h2>
-    <div class="cols">
-{{#skills}}      <div>
-        <h3>{{group}}</h3>
-        <p>{{items|sentence}}</p>
-      </div>
+    <div class="shead rv">
+      <div><span class="no">§ 04 · Technical expertise</span><h2>{{sections.skills.title}}</h2></div>
+      <p class="intro">Three areas: the payments domain, the software that runs it, and the people and partners who make it work.</p>
+    </div>
+    <div class="areas" id="areas" hidden>
+      <div class="area" data-area="pay"><h3>Payments</h3><p class="lead mono">Domain</p></div>
+      <div class="area" data-area="soft"><h3>Software</h3><p class="lead mono">Engineering</p></div>
+      <div class="area" data-area="people"><h3>People &amp; Business</h3><p class="lead mono">Leadership</p></div>
+    </div>
+    <div class="pool" id="pool">
+{{#skills}}      <article class="sg" data-group="{{group}}">
+        <h4>{{group}}</h4>
+        <ol>{{#items}}<li><span>{{.}}</span></li>{{/items}}</ol>
+      </article>
 {{/skills}}    </div>
+  </div>
+</section>
 
+<section id="education">
+  <div class="wrap">
+    <div class="shead rv">
+      <div><span class="no">§ 05 · Education</span><h2>Education and research</h2></div>
+      <p class="intro">Qualifications on the left; the research behind them on the right.</p>
+    </div>
     <div class="edu">
-{{#education}}      <div>
-        <h3>{{degree}}</h3>
-        <p>{{school}}, {{year}}.</p>
-{{#thesis}}        <p class="thesis"><span class="tl">Thesis</span> <em>{{thesis}}</em></p>
-        <p class="tsum">{{thesisSummary}}</p>
-{{/thesis}}{{#thesisAbstract}}        <details class="abs"><summary>Read the abstract</summary><p>{{thesisAbstract}}</p></details>
-{{/thesisAbstract}}{{#project}}        <p class="proj"><span class="tl">Also</span> {{project}}</p>
-{{/project}}
+      <div class="rv">
+        <p class="mono" style="color:var(--muted)">Qualifications</p>
+        <ul class="quals">
+{{#education}}          <li><span class="yr">{{year}}</span><h3>{{degree}}</h3><p>{{school}}</p></li>
+{{/education}}        </ul>
       </div>
-{{/education}}{{#certifications}}      <div class="cert">
-        <h3>{{issuer}} · {{dateLabel}}</h3>
-        <p>Software and Application Development course: {{subjects|list}}.</p>
-        <p><a href="{{url}}" data-kmh-cert="{{@i}}">View the certificate</a></p>
+      <div class="research">
+{{#education}}{{#thesis}}        <article class="paper rv">
+          <p class="mono meta"><b>Research</b> · Thesis, {{degree}}, {{year}}</p>
+          <h3>{{thesis}}</h3>
+          <p class="sum">{{thesisSummary}}</p>
+{{/thesis}}{{#thesisAbstract}}          <details class="abs"><summary>Read the abstract</summary><p>{{thesisAbstract}}</p></details>
+{{/thesisAbstract}}{{#project}}          <p class="proj"><span class="mono">Also</span>{{project}}</p>
+{{/project}}{{#thesis}}        </article>
+{{/thesis}}{{/education}}      </div>
+    </div>
+    <div class="certs rv">
+      <h3>{{sections.certifications.title}}</h3>
+{{#certifications}}      <div class="cert">
+        <span class="when">{{dateLabel}}</span>
+        <p><b>{{issuer}}</b> · Software and Application Development course: {{subjects|list}}.</p>
+        <a class="arrow-link" href="{{url}}" data-kmh-cert="{{@i}}">View the certificate <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
       </div>
 {{/certifications}}    </div>
   </div>
@@ -501,12 +661,14 @@ footer { position: relative; z-index: 2; padding: 0 var(--pr) 40px calc(var(--gx
 
 <section id="apps">
   <div class="wrap">
-    <h2>{{sections.apps.title}}</h2>
-    <p class="intro">{{sections.apps.intro}}</p>
+    <div class="shead rv">
+      <div><span class="no">§ 06 · In use</span><h2>{{sections.apps.title}}</h2></div>
+      <p class="intro">{{sections.apps.intro}}</p>
+    </div>
     <div class="apps-grid">
-{{#apps}}      <figure class="app">
+{{#apps}}      <figure class="app rv">
         <div class="vid"><video src="{{file}}" poster="{{poster}}" width="1280" height="720" muted loop playsinline controls preload="none" data-kmh-auto aria-label="{{app}} by {{bank}}: a 25-second walkthrough on a payment terminal"></video></div>
-        <figcaption><b>{{app}}</b><span class="bank">{{bank}}</span><p>{{summary}}</p></figcaption>
+        <figcaption><span class="bank">{{bank}}</span><b>{{app}}</b><p>{{summary}}</p></figcaption>
       </figure>
 {{/apps}}    </div>
   </div>
@@ -514,221 +676,133 @@ footer { position: relative; z-index: 2; padding: 0 var(--pr) 40px calc(var(--gx
 
 <section id="contact">
   <div class="wrap">
-    <h2>{{sections.contact.title}}</h2>
-    <div class="contact">
-      <div class="photo">
-        <img src="data:image/webp;base64,%%HEAD%%" width="520" height="638" loading="lazy" decoding="async" alt="{{photos.headAlt}}">
-      </div>
+    <span class="no rv">§ 07 · Contact</span>
+    <div class="close rv">
       <div>
+        <h2>{{sections.contact.title}}</h2>
         <a class="mail" href="mailto:{{identity.email}}">{{identity.email}}</a>
         <ul class="links">
 {{#links}}          <li><a href="{{url}}">{{label}}</a></li>
 {{/links}}        </ul>
       </div>
+      <figure class="portrait">
+        <img src="data:image/webp;base64,%%HERO%%" width="449" height="1300" loading="lazy" decoding="async" alt="{{photos.heroAlt}}">
+        <figcaption class="mono">{{identity.city}}, {{identity.country}}</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer>{{identity.name}}, {{identity.city}}, {{identity.country}}</footer>
+<footer>
+  <div class="wrap mono"><span>{{identity.name}} · {{identity.city}}, {{identity.country}}</span><span>Sunday edition · Untangle</span></div>
+</footer>
 
 <script>
 (function () {
   var root = document.documentElement;
   root.classList.add('js');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(id) { return document.getElementById(id); }
+  function all(s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); }
   var TAU = Math.PI * 2;
+  function sm(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
 
-  function smooth(a, b, x) { var t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
-  /* Updated by Mobashyer D-17-11-26 --gx is now a calculation, so measure it instead of parsing it */
-  var probe = document.createElement('div');
-  probe.style.cssText = 'position:absolute;left:0;top:0;height:0;visibility:hidden;width:var(--gx)';
-  document.body.appendChild(probe);
-  function gutter() { return probe.getBoundingClientRect().width + 0.85; }
-  function toPath(P) {
-    var d = '', px, py;
-    for (var i = 0; i < P.length; i++) {
-      var x = P[i][0], y = P[i][1];
-      if (i === 0) d = 'M' + x.toFixed(1) + ' ' + y.toFixed(1);
-      else d += 'Q' + px.toFixed(1) + ' ' + py.toFixed(1) + ' ' + ((px + x) / 2).toFixed(1) + ' ' + ((py + y) / 2).toFixed(1);
-      px = x; py = y;
-    }
-    return d + 'L' + px.toFixed(1) + ' ' + py.toFixed(1);
+  /* the haiku keeps its three lines on every screen */
+  var h1 = document.querySelector('.hero h1');
+  function fit() {
+    h1.style.fontSize = '';
+    var max = parseFloat(getComputedStyle(h1).fontSize), room = h1.clientWidth, widest = 0;
+    all('span', h1).forEach(function (s) { var r = document.createRange(); r.selectNodeContents(s); widest = Math.max(widest, r.getBoundingClientRect().width); });
+    if (widest > room) h1.style.fontSize = (max * room / widest * 0.98).toFixed(2) + 'px';
   }
-  function setD(paths, d) { for (var i = 0; i < paths.length; i++) paths[i].setAttribute('d', d); }
+  fit(); window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
-  /* ---------- hero: the knot that pulls straight ---------- */
-  var hero = document.querySelector('.hero');
-  var fig = document.querySelector('.figure');
-  var hPaths = document.querySelectorAll('#knot path');
-  var HN = 520, hT = [], hH = 0, hgx = 0;
-
-  function buildHero() {
-    var W = hero.clientWidth; hH = hero.clientHeight; hgx = gutter();
-    var hr = hero.getBoundingClientRect(), fr = fig.getBoundingClientRect();
-    var narrow = W < 820;
-    var fcx = fr.left - hr.left + fr.width / 2, fcy = fr.top - hr.top + fr.height / 2;
-    var cx = narrow ? fcx - W * 0.1 : fcx - fr.width * 0.7;
-    var cy = narrow ? fcy : hH * 0.48;
-    var R = narrow ? Math.min(W * 0.36, 170) : Math.min(W * 0.19, hH * 0.36);
-    hT = [];
-    for (var i = 0; i <= HN; i++) {
-      var u = i / HN;
-      var kx = cx + R * (0.58 * Math.sin(TAU * 5 * u + 0.5) + 0.30 * Math.sin(TAU * 11 * u + 1.9) + 0.12 * Math.sin(TAU * 17 * u));
-      var ky = cy + R * 0.82 * (0.58 * Math.cos(TAU * 4 * u + 1.2) + 0.30 * Math.sin(TAU * 9 * u + 0.3) + 0.12 * Math.cos(TAU * 14 * u));
-      var e = smooth(0.04, 0.2, u) * smooth(0.96, 0.8, u);
-      hT.push([hgx + (kx - hgx) * e, u * hH + (ky - u * hH) * e, u * hH]);
+  /* a tangled line: k = 0 is the full knot, k = 1 is straight */
+  function knot(W, H, k, seed, loops) {
+    var d = '', N = 220, cy = H / 2, q = sm(k);
+    for (var i = 0; i <= N; i++) {
+      var u = i / N, e = Math.pow(Math.sin(Math.PI * Math.min(1, Math.max(0, (u - 0.12) / 0.76))), 1.2) * (1 - q);
+      var x = W * u + e * W * 0.06 * (0.6 * Math.sin(TAU * loops * u + seed) + 0.4 * Math.sin(TAU * (loops * 2 + 1) * u + seed * 1.7));
+      var y = cy + e * H * 0.42 * (0.6 * Math.cos(TAU * (loops - 1) * u + seed * 0.7) + 0.4 * Math.sin(TAU * (loops + 3) * u + seed));
+      d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
     }
-    drawHero();
-  }
-  function drawHero() {
-    var t = still ? 0 : Math.min(1, window.scrollY / (hH * 0.7));
-    var k = 1 - Math.pow(1 - t, 3), P = [];
-    for (var i = 0; i <= HN; i++) { var p = hT[i]; P.push([p[0] + (hgx - p[0]) * k, p[1] + (p[2] - p[1]) * k]); }
-    setD(hPaths, toPath(P));
+    return d;
   }
 
-  /* ---------- the thread: draws as you scroll, knots at each career stage, ties off at contact ---------- */
-  var main = document.querySelector('main');
-  var tPaths = document.querySelectorAll('#thread path');
-  var TP = [], cum = [], TL = 0;
-
-  function rel(el) { var m = main.getBoundingClientRect(), r = el.getBoundingClientRect(); return { x: r.left - m.left, y: r.top - m.top, w: r.width, h: r.height }; }
-
-  function buildThread() {
-    var gx = gutter(), H = main.offsetHeight, narrow = window.innerWidth < 820, i, k, s;
-    TP = [[gx, 0, 0]];
-    var stages = main.querySelectorAll('.stage');
-    for (i = 0; i < stages.length; i++) {
-      var b = rel(stages[i]);
-      var y0 = b.y + (narrow ? 42 : 50);
-      var r = [18, 27, 38, 52][i] * (narrow ? 0.8 : 1);
-      var A = [11, 18, 26, 36][i] * (narrow ? 0.5 : 1);
-      var n = i + 2, K = 30 + i * 18;
-      TP.push([gx, y0 - r, y0 - r]);
-      for (k = 1; k < K; k++) {
-        s = k / K;
-        var e = Math.pow(Math.sin(Math.PI * s), 0.8);
-        TP.push([gx + A * e * Math.sin(TAU * n * s + 0.6 * i + 0.4), y0 + (2 * s - 1) * r + r * 0.5 * e * Math.sin(TAU * (n + 1) * s + 1.1), y0 + (2 * s - 1) * r]);
-      }
-      TP.push([gx, y0 + r, y0 + r]);
-    }
-    var c = rel(document.querySelector('.contact'));
-    var a = c.w / 2 + (narrow ? 20 : 34), bb = c.h / 2 + (narrow ? 44 : 34), cx = c.x + c.w / 2, cy = c.y + c.h / 2;
-    var y1 = cy - bb * 0.6, K2 = 130, grow = narrow ? 0.02 : 0.05;
-    TP.push([gx, y1, y1]);
-    for (k = 0; k <= K2; k++) {
-      s = k / K2;
-      var th = Math.PI + TAU * 1.1 * s, g = 1 + grow * s, co = Math.cos(th), si = Math.sin(th);
-      TP.push([cx + a * g * (co < 0 ? -1 : 1) * Math.pow(Math.abs(co), 1 / 3), cy - bb * g * (si < 0 ? -1 : 1) * Math.pow(Math.abs(si), 1 / 3), y1 + (H - y1) * (k + 1) / (K2 + 1)]);
-    }
-    cum = [0];
-    for (i = 1; i < TP.length; i++) cum.push(cum[i - 1] + Math.hypot(TP[i][0] - TP[i - 1][0], TP[i][1] - TP[i - 1][1]));
-    setD(tPaths, toPath(TP));
-    TL = tPaths[0].getTotalLength();
-    for (i = 0; i < tPaths.length; i++) tPaths[i].style.strokeDasharray = TL + ' ' + TL;
-    drawThread();
-  }
-  function drawThread() {
-    var f = 1;
-    if (!still) {
-      var atEnd = window.innerHeight + window.scrollY >= root.scrollHeight - 6;
-      if (!atEnd) {
-        var target = window.innerHeight * 0.72 - main.getBoundingClientRect().top;
-        var lo = 0, hi = TP.length - 1;
-        if (target <= 0) f = 0;
-        else if (target >= TP[hi][2]) f = 1;
-        else {
-          while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (TP[mid][2] <= target) lo = mid; else hi = mid; }
-          var span = TP[hi][2] - TP[lo][2];
-          var len = cum[lo] + (span > 0 ? (cum[hi] - cum[lo]) * (target - TP[lo][2]) / span : 0);
-          f = len / cum[cum.length - 1];
-        }
-      }
-    }
-    for (var i = 0; i < tPaths.length; i++) tPaths[i].style.strokeDashoffset = TL * (1 - f);
+  /* Fig. 1: the knot pulls straight as the visitor reads down the first screens */
+  var kf = $('knot'), kp = kf.querySelector('path'), kd = kf.querySelector('circle'), tension = $('tension');
+  kd.setAttribute('cx', 800); kd.setAttribute('cy', 55);
+  var lastK = -1;
+  function pull() {
+    var k = still ? 1 : sm(window.scrollY / (window.innerHeight * 1.3));
+    if (Math.abs(k - lastK) < 0.002) return; lastK = k;
+    kp.setAttribute('d', knot(800, 110, k, 1.3, 5));
+    tension.textContent = Math.round((1 - k) * 100) + '%';
   }
 
-  /* ---------- case files: each has its own tangle, which straightens when the file opens ---------- */
-  var seeds = [[7, 13, 6, 11, 0.3], [8, 15, 5, 12, 1.1], [6, 11, 7, 13, 2.0], [9, 14, 6, 10, 0.7], [7, 16, 8, 11, 1.6], [8, 12, 9, 14, 2.6]];
-  var files = [];
-  Array.prototype.forEach.call(document.querySelectorAll('.case'), function (el, i) {
-    var svg = el.querySelector('.tangle'), paths = svg.querySelectorAll('path'), dot = svg.querySelector('.dot'), pulse = svg.querySelector('.pulse');
-    var btn = el.querySelector('.toggle'), cue = el.querySelector('.cue');
-    var sd = seeds[i % seeds.length], t = 0, raf = 0;
+  /* reading progress thread in the margin */
+  var gi = document.querySelector('#gutter i'), gb = document.querySelector('#gutter b');
+  function progress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight, p = max > 0 ? window.scrollY / max : 0;
+    gi.style.transform = 'scaleY(' + p.toFixed(4) + ')';
+    gb.style.top = (p * 100).toFixed(2) + '%';
+  }
+  var ticking = false;
+  function onScroll() { if (ticking) return; ticking = true; requestAnimationFrame(function () { ticking = false; pull(); progress(); }); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  pull(); progress();
 
-    function render() {
-      var W = svg.clientWidth || 320, N = 360, k = t * t * (3 - 2 * t), P = [];
-      var yc = 52 + (13 - 52) * k, ax = Math.min(W * 0.2, 110);
-      for (var j = 0; j <= N; j++) {
-        var u = j / N, e = smooth(0.1, 0.32, u) * smooth(0.9, 0.68, u) * (1 - k);
-        P.push([2 + (W - 12) * u + e * ax * (0.6 * Math.sin(TAU * sd[0] * u + sd[4]) + 0.4 * Math.sin(TAU * sd[1] * u + 1.7)),
-                yc + e * 40 * (0.6 * Math.cos(TAU * sd[2] * u + sd[4] * 2) + 0.4 * Math.sin(TAU * sd[3] * u + 0.5))]);
-      }
-      setD(paths, toPath(P));
-      dot.setAttribute('cx', W - 8); dot.setAttribute('cy', yc); pulse.setAttribute('cx', W - 8); pulse.setAttribute('cy', yc);
-    }
-    function set(open, instant) {
-      el.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      cue.textContent = open ? 'Click to close' : 'Click to untangle';
-      cancelAnimationFrame(raf);
-      var to = open ? 1 : 0;
-      if (instant || still) { t = to; render(); return; }
-      var from = t, start = performance.now();
-      (function step(now) {
-        var p = Math.min(1, (now - start) / 700);
-        t = from + (to - from) * p; render();
-        if (p < 1) raf = requestAnimationFrame(step);
-      })(start);
-    }
-    function flip() { set(!el.classList.contains('open')); }
-    btn.addEventListener('click', flip);
-    svg.addEventListener('click', flip);
-    cue.addEventListener('click', flip);
-    set(i === 0, true);
-    files.push(render);
+  /* career: the rail fills when the timeline comes into view; a role that hasn't started yet is marked */
+  var tl = $('tl'), now = new Date();
+  all('.ms', tl).forEach(function (m, i, arr) {
+    var when = new Date(m.getAttribute('data-when') + '-01T00:00:00'), next = arr[i + 1] ? new Date(arr[i + 1].getAttribute('data-when') + '-01T00:00:00') : null;
+    var t = m.querySelector('time'), s = document.createElement('span'); s.className = 'state mono';
+    if (when > now) { s.textContent = 'Upcoming'; t.appendChild(s); }
+    else if (!next || next > now) { s.textContent = 'Now'; t.appendChild(s); }
   });
 
-  /* ---------- wiring ---------- */
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (ticking || still) return;
-    ticking = true;
-    requestAnimationFrame(function () { ticking = false; drawHero(); drawThread(); });
-  }, { passive: true });
-
-  var pending = false;
-  function rebuild() {
-    if (pending) return;
-    pending = true;
-    requestAnimationFrame(function () { pending = false; buildHero(); buildThread(); files.forEach(function (r) { r(); }); });
-  }
-  window.addEventListener('resize', rebuild);
-  if ('ResizeObserver' in window) new ResizeObserver(rebuild).observe(main);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
-  buildHero(); buildThread();
-})();
-
-/* Added by Mobashyer D-17-11-26 shrink the headline only as far as needed so each haiku line stays on one line */
-(function () {
-  var h = document.querySelector('.hero h1');
-  if (!h) return;
-  function fit() {
-    h.style.fontSize = '';
-    var max = parseFloat(getComputedStyle(h).fontSize), room = h.clientWidth, widest = 0;
-    Array.prototype.forEach.call(h.querySelectorAll('span'), function (s) {
-      var r = document.createRange(); r.selectNodeContents(s);
-      widest = Math.max(widest, r.getBoundingClientRect().width);
+  /* case files: open and close, with the knot pulling straight */
+  all('.case').forEach(function (c, i) {
+    var svg = c.querySelector('svg.knot'), p = svg.querySelector('path'), dot = svg.querySelector('circle'), btn = c.querySelector('.open'), k = 0, raf = 0;
+    var seed = 0.7 + i * 1.9, loops = 4 + (i % 3);
+    dot.setAttribute('cx', 400); dot.setAttribute('cy', 23);
+    function draw() { p.setAttribute('d', knot(400, 46, k, seed, loops)); }
+    draw();
+    btn.addEventListener('click', function () {
+      var on = !c.classList.contains('on');
+      c.classList.toggle('on', on); btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      btn.querySelector('span').textContent = on ? 'Close the case' : 'Read the case';
+      cancelAnimationFrame(raf);
+      var from = k, to = on ? 1 : 0, t0 = performance.now();
+      if (still) { k = to; draw(); return; }
+      (function step(t) { var q = Math.min(1, (t - t0) / 650); k = from + (to - from) * q; draw(); if (q < 1) raf = requestAnimationFrame(step); })(t0);
     });
-    if (widest > room) h.style.fontSize = (max * room / widest * 0.98).toFixed(2) + 'px';
-  }
-  fit();
-  window.addEventListener('resize', fit);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-})();
+  });
 
+  /* skills: the groups gather into three areas */
+  var areas = $('areas'), pool = $('pool');
+  function areaOf(g) { return /payment|fintech|mobile|device/i.test(g) ? 'pay' : /people|business/i.test(g) ? 'people' : 'soft'; }
+  all('.sg', pool).forEach(function (g) { areas.querySelector('[data-area="' + areaOf(g.getAttribute('data-group')) + '"]').appendChild(g); });
+  areas.hidden = false; pool.hidden = true;
+
+  /* reveal on scroll */
+  var rv = all('.rv');
+  if (still || !('IntersectionObserver' in window)) rv.forEach(function (el) { el.classList.add('in'); });
+  else {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    rv.forEach(function (el, i) { el.style.transitionDelay = (el.classList.contains('case') || el.classList.contains('ms') ? (i % 3) * 70 : 0) + 'ms'; io.observe(el); });
+  }
+  if ('IntersectionObserver' in window && !still) {
+    var tio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { tl.style.setProperty('--p', 1); tio.disconnect(); } }, { threshold: 0.3 });
+    tio.observe(tl);
+  } else tl.style.setProperty('--p', 1);
+})();
 <\/script>
 </body>
 </html>
@@ -1077,6 +1151,13 @@ caption .mod { display: inline-block; margin-right: 10px; padding: 0 6px; border
 .app .bank { font-family: var(--display); letter-spacing: 0.04em; color: var(--dim); }
 .app figcaption p { color: var(--dim); font-size: 0.98rem; }
 .case dd.result.wip::after, .paper ol.notes .built.wip::after { content: "In progress"; }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
@@ -1088,9 +1169,13 @@ caption .mod { display: inline-block; margin-right: 10px; padding: 0 6px; border
 <header class="bar">
   <a class="name" href="#top">{{identity.shortName}}</a>
   <nav aria-label="Sections">
-    <a href="#career" class="opt">Career</a>
+    <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
+    <a href="#career">Career</a>
     <a href="#cases">Case files</a>
-    <a href="#next" class="opt">{{labels.next}}</a>
+    <a href="#next">{{labels.next}}</a>
+    <a href="#tools">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#apps">Apps</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -1237,8 +1322,8 @@ caption .mod { display: inline-block; margin-right: 10px; padding: 0 6px; border
         </tbody>
       </table>
 {{/skills}}    </div>
-    <div class="gennotes">
-      <h3>Education</h3>
+    <div class="gennotes" id="education">
+      <h3>Education and research</h3><\!-- Updated by Mobashyer D-19-11-26 -->
       <ol>
 {{#education}}        <li><b>{{degree}}</b>, {{school}}, {{year}}.{{#thesis}}<br><span class="note">Thesis</span> {{thesis}}.<br><span class="tsum">{{thesisSummary}}</span>{{/thesis}}{{#thesisAbstract}}<details class="abs"><summary class="hand">Read the abstract</summary><p>{{thesisAbstract}}</p></details>{{/thesisAbstract}}{{#project}}<span class="proj"><span class="note">Also</span> {{project}}</span>{{/project}}</li>
 {{/education}}      </ol>
@@ -1760,6 +1845,18 @@ footer { position: relative; z-index: 2; text-align: center; padding: 0 var(--pa
 .app .bank { font-family: var(--sc); font-weight: 700; letter-spacing: 0.06em; color: color-mix(in srgb, var(--madder) 80%, #000); font-size: 0.9rem; }
 .app figcaption p { color: var(--muted); font-size: 0.98rem; }
 .edu .cert a { color: var(--madder); }
+/* Added by Mobashyer D-19-11-26 */
+.edu-head { margin-top: clamp(56px, 7vw, 90px); }
+.edu-head + .edu { margin-top: 0; }
+/* Added by Mobashyer D-19-11-26 */
+.cert-h { font-family: var(--serif); font-weight: 500; font-size: clamp(1.4rem, 2.6vw, 1.9rem); text-align: center; margin: clamp(36px, 5vw, 56px) 0 22px; }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
@@ -1768,9 +1865,13 @@ footer { position: relative; z-index: 2; text-align: center; padding: 0 var(--pa
   <div class="wrap">
     <a class="name" href="#top">{{identity.shortName}}</a>
     <nav aria-label="Sections">
-      <a href="#career" class="opt">Career</a>
+      <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
+      <a href="#career">Career</a>
       <a href="#cases">Case files</a>
-      <a href="#next" class="opt">{{labels.next}}</a>
+      <a href="#next">{{labels.next}}</a>
+      <a href="#tools">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#apps">Apps</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -1860,6 +1961,8 @@ footer { position: relative; z-index: 2; text-align: center; padding: 0 var(--pa
         <ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>
       </div>
 {{/skills}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for education and research -->
+    <div class="shead edu-head" id="education"><svg class="motif" data-motif="book" aria-hidden="true"></svg><h2>Education and research</h2></div>
     <div class="edu">
 {{#education}}      <div>
         <h3>{{degree}}</h3>
@@ -1870,7 +1973,11 @@ footer { position: relative; z-index: 2; text-align: center; padding: 0 var(--pa
 {{/thesisAbstract}}{{#project}}        <p class="proj"><span class="tl">Also</span> {{project}}</p>
 {{/project}}
       </div>
-{{/education}}{{#certifications}}      <div class="cert">
+{{/education}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for the certificates -->
+    <h3 class="cert-h">{{sections.certifications.title}}</h3>
+    <div class="edu certs">
+{{#certifications}}      <div class="cert">
         <h3>{{issuer}} · {{dateLabel}}</h3>
         <p>Software and Application Development course: {{subjects|list}}.</p>
         <p><a href="{{url}}" data-kmh-cert="{{@i}}">View the certificate</a></p>
@@ -2042,6 +2149,7 @@ function nakshiMain() {
     fish: function () { return [['M10 14 Q40 -6 76 14 Q40 34 10 14 Z', THREADS[1]], ['M76 14 L104 2 L100 14 L104 26 Z', THREADS[0]], ['M26 14 Q40 8 56 14', THREADS[2]]]; },
     leaf: function () { return [['M60 30 L60 -4', THREADS[3]], ['M60 14 Q36 10 24 -2 Q46 -2 60 14', THREADS[3]], ['M60 8 Q84 4 96 -8 Q74 -8 60 8', THREADS[3]], ['M60 22 Q38 22 28 14', THREADS[2]], ['M60 20 Q82 20 92 12', THREADS[2]]]; },
     border: function () { var d = 'M0 14'; for (var i = 0; i < 12; i++) d += ' L' + (i * 10 + 5) + ' ' + (i % 2 ? 4 : 24); return [[d, THREADS[0]], ['M0 30 L120 30', THREADS[1]], ['M0 -2 L120 -2', THREADS[1]]]; },
+    book: function () { return [['M60 6 Q38 -2 14 4 L14 32 Q38 26 60 34 Z', THREADS[1]], ['M60 6 Q82 -2 106 4 L106 32 Q82 26 60 34 Z', THREADS[0]], ['M60 6 L60 34', THREADS[2]], ['M24 12 Q40 9 52 13', THREADS[2]], ['M68 13 Q80 9 96 12', THREADS[2]]]; },
     sun: function () { var o = [['M74 14 A14 14 0 1 1 46 14 A14 14 0 1 1 74 14', THREADS[2]]]; for (var i = 0; i < 10; i++) { var a = i / 10 * TAU; o.push(['M' + (60 + Math.cos(a) * 20) + ' ' + (14 + Math.sin(a) * 20) + ' L' + (60 + Math.cos(a) * 30) + ' ' + (14 + Math.sin(a) * 30), THREADS[0]]); } return o; }
   };
   all('svg.motif').forEach(function (svg) {
@@ -3207,6 +3315,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .reel figcaption b { color: #F3EBDD; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; }
 .reel .bank { color: #C9B98F; font-family: var(--label); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.76rem; }
 .reel figcaption p { color: #B7AC96; font-size: 0.95rem; }
+/* Added by Mobashyer D-19-11-26 */
+.edu-head { margin-top: clamp(56px, 7vw, 90px); }
+/* Added by Mobashyer D-19-11-26 */
+.cert-h { display: flex; align-items: baseline; gap: 24px; margin: clamp(36px, 5vw, 56px) 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--rule, rgba(0,0,0,.25)); }
+.cert-h h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0; }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
@@ -3215,10 +3335,15 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <div class="wrap">
     <a class="brand" href="#top"><b>The Archive</b><span class="type">Collection {{identity.initials}} · {{identity.city}}</span></a>
     <nav aria-label="Sections">
+      <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
       <a href="#records">Index</a>
-      <a href="#timeline" class="opt">Timeline</a>
-      <a href="#cases" class="opt2">Case files</a>
-      <a href="#contact">Correspondence</a>
+      <a href="#timeline">Career</a>
+      <a href="#cases">Case files</a>
+      <a href="#next">{{labels.next}}</a>
+      <a href="#tools">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -3340,6 +3465,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         <ol>{{#items}}<li>{{.}}</li>{{/items}}</ol>
       </div>
 {{/skills}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for education and research -->
+    <div class="shead edu-head" id="education"><p class="lab">Series E · Education</p><div><h2>Education and research</h2></div></div>
     <div class="prov">
 {{#education}}      <div>
         <p class="type">KMH/E/0{{@n}} · {{year}}</p>
@@ -3350,7 +3477,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 {{/thesis}}{{#project}}        <p class="thesis"><span class="lab">Also</span> {{project}}</p>
 {{/project}}        <p><a class="type" href="#rec-edu-{{@n}}">Open the full record →</a></p>
       </div>
-{{/education}}{{#certifications}}      <div>
+{{/education}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for the certificates -->
+    <div class="cert-h"><p class="lab">Series X · Certificates</p><h3>{{sections.certifications.title}}</h3></div>
+    <div class="prov certs">
+{{#certifications}}      <div>
         <p class="type">KMH/X/0{{@n}} · {{dateLabel}}</p>
         <h3>{{issuer}} certificate</h3>
         <p>Software and Application Development course: {{subjects|list}}.</p>
@@ -3813,6 +3944,17 @@ footer { position: relative; z-index: 1; padding: 20vh clamp(20px, 5vw, 64px) 36
 .app .bank { font-family: var(--display); color: var(--cyan); font-size: 0.95rem; }
 .app figcaption p { color: var(--muted); font-size: 1.02rem; }
 .edu .cert a { color: var(--cyan); }
+/* Added by Mobashyer D-19-11-26 */
+.edu-h { margin-top: clamp(56px, 7vw, 90px); }
+/* Added by Mobashyer D-19-11-26 */
+.cert-h { font-family: var(--display); font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin: clamp(36px, 5vw, 56px) 0 18px; color: var(--ink); }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
@@ -3822,9 +3964,13 @@ footer { position: relative; z-index: 1; padding: 20vh clamp(20px, 5vw, 64px) 36
 <header class="bar">
   <a class="name" href="#top">{{identity.shortName}}</a>
   <nav aria-label="Sections">
-    <a href="#career" class="opt">Career</a>
+    <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
+    <a href="#career">Career</a>
     <a href="#cases">Case files</a>
-    <a href="#next" class="opt">{{labels.next}}</a>
+    <a href="#next">{{labels.next}}</a>
+    <a href="#tools">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#apps">Apps</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -3941,6 +4087,8 @@ footer { position: relative; z-index: 1; padding: 20vh clamp(20px, 5vw, 64px) 36
         <p>{{items|sentence}}</p>
       </div>
 {{/skills}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for education and research -->
+    <h2 class="edu-h" id="education">Education and research</h2>
     <div class="edu">
 {{#education}}      <div>
         <h3>{{degree}}</h3>
@@ -3951,7 +4099,11 @@ footer { position: relative; z-index: 1; padding: 20vh clamp(20px, 5vw, 64px) 36
 {{/thesisAbstract}}{{#project}}        <p class="proj"><span class="tl">Also</span> {{project}}</p>
 {{/project}}
       </div>
-{{/education}}{{#certifications}}      <div class="cert">
+{{/education}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for the certificates -->
+    <h3 class="cert-h">{{sections.certifications.title}}</h3>
+    <div class="edu certs">
+{{#certifications}}      <div class="cert">
         <h3>{{issuer}} · {{dateLabel}}</h3>
         <p>Software and Application Development course: {{subjects|list}}.</p>
         <p><a href="{{url}}" data-kmh-cert="{{@i}}">View the certificate</a></p>
@@ -4543,6 +4695,17 @@ footer { padding: 0 var(--pad) 40px; max-width: 1240px; margin: 0 auto; }
 .app .bank { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-2); }
 .app figcaption p { color: var(--muted); font-size: 0.95rem; }
 .edu .cert a { color: var(--teal-2); }
+/* Added by Mobashyer D-19-11-26 */
+.edu-head { margin-top: clamp(56px, 7vw, 90px); }
+/* Added by Mobashyer D-19-11-26 */
+.cert-h { font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2rem); margin: clamp(36px, 5vw, 56px) 0 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+/* Added by Mobashyer D-19-11-26: every section is in the menu; on narrow screens the menu scrolls sideways instead of hiding links */
+nav[aria-label="Sections"] { min-width: 0; flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+nav[aria-label="Sections"]::-webkit-scrollbar { display: none; }
+nav[aria-label="Sections"] a { flex: none; white-space: nowrap; }
+nav[aria-label="Sections"] a.opt, nav[aria-label="Sections"] a.opt2 { display: inline-block !important; }
+*:has(+ nav[aria-label="Sections"]) { white-space: nowrap; flex: none; }   /* the name never wraps; the menu scrolls instead */
+@media (max-width: 700px) { nav[aria-label="Sections"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); padding-right: 20px; } }
 </style>
 </head>
 <body>
@@ -4550,9 +4713,13 @@ footer { padding: 0 var(--pad) 40px; max-width: 1240px; margin: 0 auto; }
 <header class="bar">
   <a class="name" href="#top">{{identity.shortName}}</a>
   <nav aria-label="Sections">
-    <a href="#career" class="opt">Career</a>
+    <\!-- Updated by Mobashyer D-19-11-26: the same sections, in page order, on every day -->
+    <a href="#career">Career</a>
     <a href="#cases">Case files</a>
-    <a href="#next" class="opt">{{labels.next}}</a>
+    <a href="#next">{{labels.next}}</a>
+    <a href="#tools">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#apps">Apps</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -4692,6 +4859,8 @@ footer { padding: 0 var(--pad) 40px; max-width: 1240px; margin: 0 auto; }
         <ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>
       </div>
 {{/skills}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for education and research -->
+    <div class="shead edu-head" id="education"><p class="mono">Roots</p><div><h2>Education and research</h2></div></div>
     <div class="edu">
 {{#education}}      <div>
         <h3>{{degree}}</h3>
@@ -4702,7 +4871,11 @@ footer { padding: 0 var(--pad) 40px; max-width: 1240px; margin: 0 auto; }
 {{/thesisAbstract}}{{#project}}        <p class="proj"><span class="tl">Also</span> {{project}}</p>
 {{/project}}
       </div>
-{{/education}}{{#certifications}}      <div class="cert">
+{{/education}}    </div>
+    <\!-- Added by Mobashyer D-19-11-26: a heading for the certificates -->
+    <h3 class="cert-h">{{sections.certifications.title}}</h3>
+    <div class="edu certs">
+{{#certifications}}      <div class="cert">
         <h3>{{issuer}} · {{dateLabel}}</h3>
         <p>Software and Application Development course: {{subjects|list}}.</p>
         <p><a href="{{url}}" data-kmh-cert="{{@i}}">View the certificate</a></p>
@@ -5261,7 +5434,7 @@ footer { padding: 0 var(--pad) 40px; max-width: 1240px; margin: 0 auto; }
   var NAMES = { untangle: 'Untangle', blueprint: 'The Blueprint', nakshi: 'Nakshi Kantha', terminal: 'The Terminal', archive: 'The Archive', cyberpunk: 'Cyberpunk Dhaka', living: 'Living Systems' };
   var FALLBACK = 'untangle';
   /* Added by Mobashyer D-17-11-26: colours for the day-change transition, and one line about each design for the week view */
-  var THEME = { untangle: ['#0E171C', '#8FA4FF'], blueprint: ['#123E7C', '#EAF2FF'], nakshi: ['#F2ECDF', '#B23A2E'], terminal: ['#070A08', '#7CF29A'],
+  var THEME = { untangle: ['#0B0D10', '#E5483B']   /* Updated by Mobashyer D-18-11-26: Sunday's new palette */, blueprint: ['#123E7C', '#EAF2FF'], nakshi: ['#F2ECDF', '#B23A2E'], terminal: ['#070A08', '#7CF29A'],
     archive: ['#EFE8DA', '#A3362C'], cyberpunk: ['#07040F', '#FF2E88'], living: ['#E8E5DF', '#0F7A70'], week: ['#101316', '#E6B85C'] };
   var DESC = {
     untangle: 'Ink and a single thread. The knot pulls straight as you scroll.',
