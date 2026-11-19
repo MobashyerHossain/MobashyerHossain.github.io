@@ -35,13 +35,13 @@ A second collection, with the same content and case files, in seven new designs.
 
 | Day | Design | Idea | Link |
 |---|---|---|---|
-| Sunday | **Swiss Modernism** | The International Typographic Style: a strict 12-column grid, big type, one red (toggle the grid to see it) | [?week=2&day=sun](https://mobashyerhossain.github.io/?week=2&day=sun) |
-| Monday | **The Editorial** | A long-form magazine: a cover, a contents page, and each case file as a feature article with a pull quote | [?week=2&day=mon](https://mobashyerhossain.github.io/?week=2&day=mon) |
-| Tuesday | **Retro Future** | A retro-future console in amber: modules with switches, a mission log, memory banks | [?week=2&day=tue](https://mobashyerhossain.github.io/?week=2&day=tue) |
-| Wednesday | **Glass Architecture** | Layered glass panes over an architectural plan; the career is a building, four floors high | [?week=2&day=wed](https://mobashyerhossain.github.io/?week=2&day=wed) |
-| Thursday | **Industrial** | Concrete, steel and safety orange: the career as a production line, case files as work orders | [?week=2&day=thu](https://mobashyerhossain.github.io/?week=2&day=thu) |
-| Friday | **Neo Minimalism** | Warm, quiet and spare: one reading column, one accent, case files that unfold | [?week=2&day=fri](https://mobashyerhossain.github.io/?week=2&day=fri) |
-| Saturday | **Data Canvas** | The career as data: an interactive timeline, case files as a network and as architecture flows, skills measured | [?week=2&day=sat](https://mobashyerhossain.github.io/?week=2&day=sat) |
+| Sunday | **Swiss Modernism** | The International Typographic Style: a strict 12-column grid, big type, one red; a kinetic poster whose scattered parts settle into a mark as you scroll | [?week=2&day=sun](https://mobashyerhossain.github.io/?week=2&day=sun) |
+| Monday | **The Editorial** | A long-form magazine: a cover, a contents page, and each case file as a feature article that opens full-page, with page turns between features | [?week=2&day=mon](https://mobashyerhossain.github.io/?week=2&day=mon) |
+| Tuesday | **Retro Future** | A retro-future console in amber: turn the tuning dial until the tangled signal on the oscilloscope runs straight; modules with switches, a mission log, memory banks | [?week=2&day=tue](https://mobashyerhossain.github.io/?week=2&day=tue) |
+| Wednesday | **Glass Architecture** | Layered glass panes over an architectural plan; the career is a glass tower in 3D, four floors high, that you can turn and explore floor by floor | [?week=2&day=wed](https://mobashyerhossain.github.io/?week=2&day=wed) |
+| Thursday | **Industrial** | Concrete, steel and safety orange: case files as work orders on a production line; scrolling runs the belt and each order is stamped at the press | [?week=2&day=thu](https://mobashyerhossain.github.io/?week=2&day=thu) |
+| Friday | **Neo Minimalism** | Warm, quiet and spare: one reading column, one accent, case files that unfold, and a single thread in the margin whose knots loosen as you read | [?week=2&day=fri](https://mobashyerhossain.github.io/?week=2&day=fri) |
+| Saturday | **Data Canvas** | The career as data: the whole portfolio as a 3D network you can turn and explore, an interactive timeline, case files as a network and as architecture flows, skills measured | [?week=2&day=sat](https://mobashyerhossain.github.io/?week=2&day=sat) |
 
 Addresses: `?week=2&day=mon` opens a Week 02 design, `?week=2` opens today's Week 02 design, and `?week=2&day=week` shows all seven. Every address without `week=2` behaves exactly as before, and Week 01 stays the default. All variations share one canonical URL, so search engines see a single page.
 
@@ -58,7 +58,7 @@ Addresses: `?week=2&day=mon` opens a Week 02 design, `?week=2` opens today's Wee
 - **Education, research and certifications** in their own sections; certificates open in a view-only dialog.
 - **Accessible**: keyboard operable throughout, respects reduced-motion settings, and works without JavaScript (a plain, readable version of the full content is in the page itself).
 - **Search-ready**: one canonical URL, Open Graph and X card tags, JSON-LD structured data (ProfilePage, Person, VideoObject), sitemap and robots.txt.
-- **No build step on GitHub, no frameworks**: plain HTML, CSS and JavaScript. Three.js (loaded only on the two 3D days) is the only library.
+- **No build step on GitHub, no frameworks**: plain HTML, CSS and JavaScript. Three.js (loaded only on the 3D days, and on Week 02 only when the 3D part nears the screen) is the only library.
 
 ## Repository contents
 
