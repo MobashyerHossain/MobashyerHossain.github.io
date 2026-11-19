@@ -40,7 +40,12 @@
   if (q === 'all') q = 'week';
   var full = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(q); if (full >= 0) q = K[full];
   /* Added by Mobashyer D-18-11-26: ?week=2 picks from the second collection */
-  var w2 = false; try { w2 = /^0?2$/.test((new URLSearchParams(location.search).get('week') || '').trim()); } catch (e) {}
+  /* Updated by Mobashyer D-19-11-26: without week= in the address, even ISO weeks open Week 02 (same rule as core.js) */
+  var wq = null; try { wq = new URLSearchParams(location.search).get('week'); } catch (e) {}
+  wq = wq === null ? '' : wq.trim();
+  var nd = new Date(), t = new Date(Date.UTC(nd.getFullYear(), nd.getMonth(), nd.getDate())); t.setUTCDate(t.getUTCDate() + 4 - (t.getUTCDay() || 7));
+  var iso = Math.ceil(((t - Date.UTC(t.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);
+  var w2 = /^0?2$/.test(wq) || (!/^0?1$/.test(wq) && iso % 2 === 0);
   var I = w2 ? {"sun": "swiss", "mon": "editorial", "tue": "retro", "wed": "glass", "thu": "industrial", "fri": "neomin", "sat": "canvas"} : {"sun": "untangle", "mon": "blueprint", "tue": "nakshi", "wed": "terminal", "thu": "archive", "fri": "cyberpunk", "sat": "living"}, d = K.indexOf(q) >= 0 ? q : K[new Date().getDay()];
   var s = q === 'week' ? 'week' : I[d], href = F[s];
   if (href) { var l = document.createElement('link'); l.rel = 'preload'; l.as = 'style'; l.href = href; document.head.appendChild(l); }
@@ -9736,19 +9741,30 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
     return { key: null, invalid: true };
   }
   /* Added by Mobashyer D-18-11-26: which collection? week=2 (or 02) is Week 02; anything else is Week 01 */
-  function parseColl(search) {
+  /* Updated by Mobashyer D-19-11-26: the two collections take turns by calendar week. Odd ISO weeks open Week 01 and
+     even ISO weeks open Week 02, on the visitor's own clock, so everyone sees the same collection in a given week.
+     An address that names a week (week=1 or week=2) always opens that week. */
+  function isoWeek(d) {
+    var t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())), wd = t.getUTCDay() || 7;
+    t.setUTCDate(t.getUTCDate() + 4 - wd);
+    return Math.ceil(((t - Date.UTC(t.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);
+  }
+  function weekOfDate() { return isoWeek(new Date()) % 2 === 0 ? 2 : 1; }
+  function weekParam(search) {   /* 1, 2, null (none given) or 0 (not a week) */
     var w = null;
     try { w = new URLSearchParams(search).get('week'); } catch (e) {}
-    return w !== null && /^0?2$/.test(w.trim()) ? 2 : 1;
+    if (w === null) return null;
+    w = w.trim(); return /^0?1$/.test(w) ? 1 : /^0?2$/.test(w) ? 2 : 0;
   }
-  /* Updated by Mobashyer D-18-11-26: the address also carries the collection; Week 01 addresses never get week= */
+  function parseColl(search) { var w = weekParam(search); return w ? w : weekOfDate(); }
+  /* Updated by Mobashyer D-19-11-26: the address names the week only when it has to: when the collection on screen is not
+     this week's, or the address already named one. An address without week= follows the rotation. */
   function urlFor(key, keepHash, c) {
-    var u = new URL(location.href);
+    var u = new URL(location.href), named = weekParam(u.search);
     if (key) u.searchParams.set('day', key); else u.searchParams.delete('day');
-    if (c === 2) {   /* week first, so the address reads ?week=2&day=mon */
-      var d = u.searchParams.get('day'); u.searchParams.delete('day'); u.searchParams.delete('week');
-      u.searchParams.set('week', '2'); if (d) u.searchParams.set('day', d);
-    } else u.searchParams.delete('week');
+    var d = u.searchParams.get('day'); u.searchParams.delete('day'); u.searchParams.delete('week');
+    if (c !== weekOfDate() || named === 1 || named === 2) u.searchParams.set('week', String(c));   /* week first: ?week=2&day=mon */
+    if (d) u.searchParams.set('day', d);
     if (!keepHash) u.hash = '';
     return u.pathname + u.search + u.hash;
   }
@@ -9775,7 +9791,8 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
     /* Added by Mobashyer D-18-11-26: the collection selector */
     var col = '<span class="kmh-col" role="group" aria-label="Design collection"><span class="kmh-ct" aria-hidden="true">Week</span>' + [1, 2].map(function (c) {
       var d = weekLabel(c) + (c === 1 ? ', the first seven designs' : ', seven more designs');
-      return '<button type="button" data-coll="' + c + '" aria-pressed="' + (c === coll ? 'true' : 'false') + '" aria-label="' + d + '" title="' + d + '">0' + c + '</button>';
+      if (c === weekOfDate()) d += ', this week';   /* Added by Mobashyer D-19-11-26 */
+      return '<button type="button" data-coll="' + c + '" class="' + (c === weekOfDate() ? 'cur' : '') + '" aria-pressed="' + (c === coll ? 'true' : 'false') + '" aria-label="' + d + '" title="' + d + '">0' + c + '</button>';
     }).join('') + '</span>';
     var back = view !== today ? '<button type="button" class="back" data-day="' + today + '">Back to today</button>' : '';
     var note = '';
@@ -9784,8 +9801,9 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
     if (!week && !seen) {
       /* shown once per browser: the site changes with the day, and there is a way to see every design */
       try { localStorage.setItem('kmh-week-note', '1'); } catch (e) {}
-      var line = view === today ? 'This portfolio changes with the day of the week. Today’s design is <b>' + NAMES[style] + '</b>.'
-        : 'You’re viewing <b>' + DAYS[KEYS.indexOf(view)] + '’s</b> design. This portfolio has a different one for each day of the week.';
+      /* Updated by Mobashyer D-19-11-26: the note also mentions the two collections taking turns */
+      var line = view === today ? 'This portfolio changes with the day of the week, and has two collections that take turns week by week. Today’s design is <b>' + NAMES[style] + '</b>.'
+        : 'You’re viewing <b>' + DAYS[KEYS.indexOf(view)] + '’s</b> design. This portfolio has a different one for each day of the week, in two collections that take turns week by week.';
       note = '<div id="kmh-note" role="status"><p>' + line + '</p><div><button type="button" data-note="week">See all seven</button><button type="button" data-note="close" class="ghost">Got it</button></div></div>';
     }
     return '<style>' +
@@ -9823,6 +9841,7 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
       '#kmh-days [data-coll]{all:unset;box-sizing:border-box;height:22px;min-width:28px;padding:0 6px;border-radius:11px;text-align:center;line-height:22px;cursor:pointer;color:#fff;opacity:.72;font-variant-numeric:tabular-nums}' +
       '#kmh-days [data-coll]:hover{opacity:1;background:rgba(255,255,255,.16)}#kmh-days [data-coll]:focus-visible{outline:2px solid #fff;outline-offset:2px;opacity:1}' +
       '#kmh-days [data-coll][aria-pressed="true"]{background:#ffcf5a;color:#0a0c10;opacity:1;font-weight:600}' +
+      '#kmh-days [data-coll]{position:relative}#kmh-days [data-coll].cur::after{content:"";position:absolute;left:50%;bottom:-3px;width:10px;height:2px;margin-left:-5px;border-radius:2px;background:#ffcf5a}' +   /* Added by Mobashyer D-19-11-26: this week's collection, marked like today's day */
       '@media (max-width:600px){#kmh-days .kmh-hd{flex-basis:100%;justify-content:flex-end;margin:0 4px 2px 0}#kmh-days .kmh-hd .lbl{flex:0 1 auto;min-width:0;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}' +
       '@media (prefers-reduced-motion:reduce){#kmh-note{animation:none}}' +
       '@media print{#kmh-days,#kmh-note{display:none}}' +
@@ -9854,7 +9873,7 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
   }
   function shareUrl() {
     var base = location.origin && location.origin !== 'null' ? location.origin + location.pathname : location.href.split('?')[0].split('#')[0];
-    return base + (coll === 2 ? '?week=2&day=' : '?day=') + current;   /* Updated by Mobashyer D-18-11-26: keeps the collection */
+    return base + '?week=' + coll + '&day=' + current;   /* Updated by Mobashyer D-19-11-26: a shared link always names its week, so it opens the same design */
   }
   function viewName() {   /* Updated by Mobashyer D-18-11-26 */
     var w = coll === 2 ? ' (' + weekLabel(2) + ')' : '';
@@ -10007,7 +10026,7 @@ footer .w { display: flex; flex-wrap: wrap; justify-content: space-between; gap:
       '</style></head><body><div class="wrap">' +
       '<header><div><p class="who">' + esc(c.identity.name) + ' · ' + esc(c.identity.city) + '</p><h1>' + (coll === 2 ? 'Week 02, <i>seven more designs</i>' : 'Seven days, <i>seven designs</i>') + '</h1>' +
       '<p class="lede">The same portfolio, with the same facts and the same case files, in a different design for each day of the week. Your own weekday decides which one opens first. Pick any day to step inside.</p>' +
-      '<div class="tabs" role="group" aria-label="Design collection">' + [1, 2].map(function (n) { return '<button type="button" data-coll="' + n + '" aria-pressed="' + (n === coll ? 'true' : 'false') + '">' + weekLabel(n) + '</button>'; }).join('') + '</div></div>' +
+      '<div class="tabs" role="group" aria-label="Design collection">' + [1, 2].map(function (n) { return '<button type="button" data-coll="' + n + '" aria-pressed="' + (n === coll ? 'true' : 'false') + '">' + weekLabel(n) + (n === weekOfDate() ? ' · this week' : '') + '</button>'; }).join('') + '</div></div>' +
       '<p class="haiku">' + c.hero.haiku.map(esc).join('<br>') + '</p></header>' +
       '<ul>' + cards + '</ul></div>' +   /* Updated by Mobashyer D-19-11-26: the "thumbnails are live" note is gone */
       LT + SCR + '>(function(){function fit(){document.querySelectorAll(".thumb").forEach(function(t){t.style.setProperty("--s",(t.clientWidth/1440).toFixed(4));});}fit();window.addEventListener("resize",fit);' +

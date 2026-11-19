@@ -43,11 +43,13 @@ A second collection, with the same content and case files, in seven new designs.
 | Friday | **Neo Minimalism** | Warm, quiet and spare: one reading column, one accent, case files that unfold, and a single thread in the margin whose knots loosen as you read | [?week=2&day=fri](https://mobashyerhossain.github.io/?week=2&day=fri) |
 | Saturday | **Data Canvas** | The career as data: the whole portfolio as a 3D network you can turn and explore, an interactive timeline, case files as a network and as architecture flows, skills measured | [?week=2&day=sat](https://mobashyerhossain.github.io/?week=2&day=sat) |
 
-Addresses: `?week=2&day=mon` opens a Week 02 design, `?week=2` opens today's Week 02 design, and `?week=2&day=week` shows all seven. Every address without `week=2` behaves exactly as before, and Week 01 stays the default. All variations share one canonical URL, so search engines see a single page.
+**The two collections take turns by calendar week.** In odd-numbered weeks of the year (ISO weeks) the site opens Week 01; in even-numbered weeks it opens Week 02, on the visitor's own clock, so everyone sees the same collection in a given week. The selector marks this week's collection.
+
+Addresses: `?week=2&day=mon` and `?week=1&day=mon` always open that week's design; `?day=mon` and the plain address follow the rotation; `?week=2&day=week` shows all seven of Week 02. Shared links always name their week, so they open the same design for the person receiving them. All variations share one canonical URL, so search engines see a single page.
 
 ## Features
 
-- **Day-based design** chosen from the visitor’s own clock, with a switcher to preview any other day, and a Week 01 / Week 02 selector for the second collection. Switching happens without a reload, with a thread-pulling transition, and the browser’s Back and Forward buttons work.
+- **Day-based design** chosen from the visitor’s own clock, with two collections that take turns week by week, a switcher to preview any other day, and a Week 01 / Week 02 selector. Switching happens without a reload, with a thread-pulling transition, and the browser’s Back and Forward buttons work.
 - **Week view** showing every design side by side: screenshots appear instantly, then each live page loads behind its card.
 - **Consistent menu** on every design: Career, Case files, What’s next, Skills, Education, Apps and Contact, in page order. On narrow screens it scrolls sideways instead of hiding links.
 - **A tab icon for each day**, which changes as soon as you switch.
