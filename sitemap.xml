@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://mobashyerhossain.github.io/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <image:image><image:loc>https://mobashyerhossain.github.io/mobashyer-hossain.jpg</image:loc></image:image>
     <video:video>
       <video:thumbnail_loc>https://mobashyerhossain.github.io/media/ebl-powercard.jpg</video:thumbnail_loc>
@@ -47,6 +47,6 @@
   </url>
   <url>
     <loc>https://mobashyerhossain.github.io/cv.pdf</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
   </url>
 </urlset>
